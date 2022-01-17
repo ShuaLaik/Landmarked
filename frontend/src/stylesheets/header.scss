@@ -1,0 +1,14 @@
+.Header{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(238, 236, 236);
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+}
+.group{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}

@@ -1,5 +1,9 @@
 @import 'reset.scss';
-
+@import 'header.scss';
+@import 'body.scss';
+*, h1, h2, h3, h4, h5, h6{
+    font-family: 'Josefin Sans', sans-serif;;
+}
 body{
     border: 1px solid red;
 }
@@ -10,7 +14,4 @@ input{
     background-color: red;
 }
 
-#map-container{
-    height: 500px;
-    width: 500px;
-}
+
