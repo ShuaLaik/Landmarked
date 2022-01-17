@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const EntrySchema = new Schema({
+    //do we have urls ? do we use AWS
     entry_photo_url: {
         type: String,
         required: true
@@ -13,12 +14,10 @@ const EntrySchema = new Schema({
     //possibly uneeded?
     location: {
         latitude: {
-            type: Number,
-            required: true
+            type: Number
         },
         longitude: {
-            type: Number,
-            required: true
+            type: Number
         }
     },
     landmark: {

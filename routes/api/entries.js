@@ -14,3 +14,23 @@ router.get(`/user/:user_id`, (req, res) => {
         )
     );
 });
+
+router.post(`/`, (req, res) => {
+
+    const { errors, isValid } = validateEntryInput(req.body);
+
+    if (!isValid) {
+      return res.status(400).json(errors);
+    }
+
+    const newEntry = new Entry({
+        entry_photo_url: req.body.entry_photo_url,
+        message: req.body.message,
+        landmark: req.body.landmark,
+        traveler: req.body.traveler
+    });
+    
+    newEntry.save()
+        .then(entry => res.json(entry))
+
+});
