@@ -31,3 +31,6 @@ const EntrySchema = new Schema({
     },
     timestamps: true
 })
+
+module.exports = Entry = mongoose.model('Entry', EntrySchema);
+
