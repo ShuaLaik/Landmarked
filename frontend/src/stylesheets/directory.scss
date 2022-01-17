@@ -1,0 +1,16 @@
+@import 'reset.scss';
+
+body{
+    border: 1px solid red;
+}
+.main-page{
+    background-color: green;
+}
+input{
+    background-color: red;
+}
+
+#map-container{
+    height: 500px;
+    width: 500px;
+}
