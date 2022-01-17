@@ -2,32 +2,31 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const EntrySchema = new Schema({
-    //do we have urls ? do we use AWS
     entry_photo_url: {
         type: String,
         required: true
     },
-    message: {
+    message: {  
         type: String,
         required: true
     },
-    //possibly uneeded?
-    location: {
-        latitude: {
-            type: Number
-        },
+    location: { type: Object,
         longitude: {
-            type: Number
+            type: Number,
+            required: true
+        },
+        latitude: {
+            type: Number,
+            required: true
         }
     },
-    landmark: {
-        type: Schema.Types.ObjectId,
-        ref: Landmark
-    },
-    traveler: {
+    location_id: String, // this is placeholder if/when we identify location with one number, until 
+    // then we will use lat/long
+    user: {
         type: Schema.Types.ObjectId,
         ref: User
-    },
+    }
+}, {
     timestamps: true
 })
 

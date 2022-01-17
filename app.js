@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use("/api/users", users);
-app.use("/api/landmarks", landmarks);
+// app.use("/api/landmarks", landmarks);
 app.use("/api/entries", entries);
 
 

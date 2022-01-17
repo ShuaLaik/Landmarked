@@ -4,10 +4,6 @@ const validText = require('./valid-text');
 module.exports = function validateEntryInput(data) {
     let errors = {};
   
-    data.username = validText(data.username) ? data.username : '';
-    data.password = validText(data.password) ? data.password : '';
-  
-  
     if (Validator.isEmpty(data.entry_photo_url)) {
       errors.entry_photo_url = 'A photo is required';
     }
@@ -16,16 +12,16 @@ module.exports = function validateEntryInput(data) {
       errors.message = 'Message field is required';
     }
 
-    // if (Validator.isEmpty(data.landmark)) {
-    //     errors.landmark = 'A landmark is required';
-    // }
-    
-    //   if (Validator.isEmpty(data.location)) {
-    //     errors.location = 'Location field is required';
-    //   }
+    if (Validator.isEmpty(data.location.longitude)) {
+        errors.location.longitude = 'A longitude is required';
+    }
 
-    if (Validator.isEmpty(data.traveler)) {
-        errors.traveler = 'Traveler field is required';
+    if (Validator.isEmpty(data.location.latitude)) {
+        errors.location.latitude = 'A latitude is required';
+    }
+    
+    if (Validator.isEmpty(data.user)) {
+      errors.user = 'user field is required';
     }
   
     return {
