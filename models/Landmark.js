@@ -7,6 +7,10 @@ const LandmarkSchema = new Schema({
         type: String,
         required: true
     },
+    description: {
+        type: String    
+    },
+    photo: String,
     location: {
         latitude: {
             type: Number,

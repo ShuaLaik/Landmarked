@@ -6,28 +6,29 @@ const EntrySchema = new Schema({
         type: String,
         required: true
     },
-    message: {
+    message: {  
         type: String,
         required: true
     },
-    //possibly uneeded?
-    location: {
-        latitude: {
+    location: { type: Object,
+        longitude: {
             type: Number,
             required: true
         },
-        longitude: {
+        latitude: {
             type: Number,
             required: true
         }
     },
-    landmark: {
-        type: Schema.Types.ObjectId,
-        ref: Landmark
-    },
-    traveler: {
+    location_id: String, // this is placeholder if/when we identify location with one number, until 
+    // then we will use lat/long
+    user: {
         type: Schema.Types.ObjectId,
         ref: User
-    },
+    }
+}, {
     timestamps: true
 })
+
+module.exports = Entry = mongoose.model('Entry', EntrySchema);
+
