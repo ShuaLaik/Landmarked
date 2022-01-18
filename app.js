@@ -4,11 +4,17 @@ const db = require('./config/keys').mongoURI;
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const passport = require('passport');
+const path = require('path');
 
 const users = require("./routes/api/users");
 const landmarks = require("./routes/api/landmarks");
 const entries = require('./routes/api/entries');
-
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('frontend/build'));
+  app.get('/', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+  })
+}
 mongoose
   .connect(db, { useNewUrlParser: true })
   .then(() => console.log("Connected to MongoDB successfully"))
