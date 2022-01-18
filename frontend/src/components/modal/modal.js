@@ -2,9 +2,10 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import EntryFormContainer from '../app/body/entry/entry_form_container';
-// import SignupFormContainer from '../session_form/signup_form_container';
+import EditFormContainer from '../app/body/entry/edit_form_container';
 
-function Modal({modal, closeModal}) {
+function Modal(props) {
+  const {modal, closeModal} = props;
   if (!modal) {
     return null;
   }
@@ -13,9 +14,9 @@ function Modal({modal, closeModal}) {
     case 'createEntry':
       component = <EntryFormContainer />;
       break;
-    // case 'signup':
-    //   component = <SignupFormContainer />;
-    //   break;
+    case 'editEntry':
+      component = <EditFormContainer entry={props.entry}/>;
+      break;
     default:
       return null;
   }
@@ -28,7 +29,7 @@ function Modal({modal, closeModal}) {
   );
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
   return {
     modal: state.ui.modal
   };

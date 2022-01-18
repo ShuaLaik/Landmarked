@@ -8,7 +8,6 @@ class ModalButton extends React.Component {
     }
 
     render () {
-        debugger
         return (
             <button onClick={() => this.props.openModal(this.props.action)}>
                 {this.props.buttonTitle}
@@ -18,7 +17,6 @@ class ModalButton extends React.Component {
 }
 
 const mSTP = (state, ownProps) => {
-    debugger
     return({
         action: ownProps.action,
         buttonTitle: ownProps.buttonTitle

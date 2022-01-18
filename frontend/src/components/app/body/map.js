@@ -3,31 +3,19 @@ import MarkerManager from '../../../util/marker_manager';
 import Style from "./styles"
 
 export default class MapDiv extends Component {
-    constructor(props){
-        super(props)
-        this.state = {
-            num: 1
+
+    componentDidUpdate(prevProps){
+        if (prevProps.entries === this.props.entries) {
+            if (Object.values(this.props.entries)){
+            this.MarkerManager.updateMarkers(Object.values(this.props.entries))
+    
+            }
         }
     }
-    componentDidUpdate(prevProps){
-        // if (prevProps.entries !== this.props.entries) {
-            this.MarkerManager.updateMarkers(Object.values(this.entrys))
-        // }
-    }
     componentDidMount() {
-        // this.entrys = {
-        //     1:{
-        //         id: 1,
-        //         location: {
-        //             latitude: "37.78584", 
-        //             longitude: "-122.445803",
-        //         }
-        //     }
-        // }
-        // debugger
         const mapOptions = {
             center: { lat: 37.7758, lng: -122.435 }, // this is SF
-            zoom: 13,
+            zoom: 2,
             streetViewControl: false,
             addressControl: false,
             panControl: false,
@@ -42,7 +30,7 @@ export default class MapDiv extends Component {
         this.map = new window.google.maps.Map(this.mapNode, mapOptions);
         this.MarkerManager = new MarkerManager(this.map);
         // this.registerListeners();
-        if (Object.values(this.props.entries) > 0){
+        if (Object.values(this.props.entries)){
             this.MarkerManager.updateMarkers(Object.values(this.props.entries))
         // this.MarkerManager.updateMarkers(Object.keys(this.props.entries)[0])
         }
