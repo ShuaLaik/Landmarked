@@ -3,8 +3,7 @@ const Schema = mongoose.Schema;
 
 const EntrySchema = new Schema({
     entry_photo_url: {
-        type: String,
-        required: true
+        type: String
     },
     message: {  
         type: String,

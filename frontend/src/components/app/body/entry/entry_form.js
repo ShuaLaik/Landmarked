@@ -4,12 +4,21 @@ import axios from 'axios';
 export default class EntryForm extends Component {
         constructor(props) {
         super(props);
-        this.state = this.props.entry
+        this.state = Object.assign({}, this.props.entry, { photoFile: "" })
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleFile = this.handleFile.bind(this)
     }
 
-    handleFile(e) {
-        this.setState({image_urls: e.target.files});
+    handleFile(e){
+        const file = e.currentTarget.files[0];
+        const fileReader = new FileReader();
+        this.setState({photoFile: e.currentTarget.files[0], photoUrl: fileReader.results})
+        fileReader.onloadend = () => {
+
+        }
+        if (file){
+            fileReader.readAsDataURL(file);
+        }
     }
     update(field){
         return e => {
@@ -17,9 +26,19 @@ export default class EntryForm extends Component {
         }
     }
 
+    handleFormData(state){
+        let formData = new FormData();
+        formData.append("entry[message]", state.message)
+        formData.append("entry[location][longitude]", state.location.longitude)
+        formData.append("entry[location][latitude]", state.location.latitude)
+        formData.append("entry[photo]", state.photoFile)
+        formData.append("entry[user]", state.user)
+        return formData;
+
+    }
+
     handleSubmit(e) {
         e.preventDefault();
-
         const address = this.state.address
         const addressString = address.split(" ").join("+")
         const requestUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${addressString}&key=${window.apikey}`
@@ -43,7 +62,7 @@ export default class EntryForm extends Component {
                 const newState = Object.assign({}, this.state, n)
                 delete newState.address
                 debugger
-                this.props.action(newState)
+                this.props.action(this.handleFormData(newState))
             })
 
         let formatted_address, newLatitude, newLongitude
@@ -54,7 +73,7 @@ export default class EntryForm extends Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <input type="file" onChange={this.update("file")}/> 
+                    <input type="file" name="photo" onChange={this.handleFile}/> 
                     <input type="text" value={this.state.address}  onChange={this.update("address")} />
                     <input type="text" value={this.state.message} onChange={this.update("message")} />
                     <button>Submit</button>

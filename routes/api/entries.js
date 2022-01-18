@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Entry = require('../../models/Entry');
 const validateEntryInput = require('../../validation/entry');
-import * as KEYS from "./dotenv/config/keys"
+const keys = require("./dotenv/config/keys")
 
 const multer = require('multer')              // multer will be used to handle the form data.
 const Aws = require('aws-sdk')                // aws-sdk library will used to upload image to s3 bucket.
@@ -69,40 +69,39 @@ const filefilter = (req, file, cb) => {
 const upload = multer({ storage: storage, fileFilter: filefilter });
 
 const s3 = new Aws.S3({
-    accessKeyId: KEYS.AWS_ACCESS_KEY_ID,              // accessKeyId that is stored in .env file
-    secretAccessKey: KEYS.AWS_ACCESS_KEY_SECRET     // secretAccessKey is also store in .env file
+    accessKeyId: keys.AWS_ACCESS_KEY_ID,              // accessKeyId that is stored in .env file
+    secretAccessKey: keys.AWS_ACCESS_KEY_SECRET     // secretAccessKey is also store in .env file
 })
 
 
-router.post(`/`, upload.single('productimage'), (req, res) => { // given data object, creates new entry
-    const { errors, isValid } = validateEntryInput(req.body);
+router.post(`/`, upload.single('entry[photo]'), (req, res) => { // given data object, creates new entry
+    // const { errors, isValid } = validateEntryInput(req.body);
     
-    if (!isValid) {
-        return res.status(400).json(errors);
-    }
-    
+    // if (!isValid) {
+    //     return res.status(400).json(errors);
+    // }
+
     const params = {
-        Bucket:process.env.AWS_BUCKET_NAME,      // bucket that we made earlier
+        Bucket:keys.AWS_BUCKET_NAME,      // bucket that we made earlier
         Key:req.file.originalname,               // Name of the image
         Body:req.file.buffer,                    // Body which will contain the image in buffer format
-        ACL:"public-read-write",                 // defining the permissions to get the public link
+        // ACL:"public-read-write",                 // defining the permissions to get the public link
         ContentType:"image/jpeg"                 // Necessary to define the image content-type to view the photo in the browser with the link
     };
-    
+
     s3.upload(params,(error,data)=>{
         if(error){
             res.status(500).send({"err":error})  // if we get any error while uploading error message will be returned.
+            console.log(error)
+            return
         }
-        
-        
-        
-        
         const newEntry = new Entry({
-            entry_photo_url: req.body.entry_photo_url,
-            message: req.body.message,
-            location: req.body.location, // latitude/longitude embedded
+            
+            entry_photo_url: data.Location,
+            message: req.body.entry.message,
+            location: req.body.entry.location, // latitude/longitude embedded
             // may need to add locationId here
-            user: req.body.user
+            user: req.body.entry.user
         });
         newEntry.save()
         .then(entry => res.json(entry))
