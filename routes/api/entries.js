@@ -8,6 +8,12 @@ const validateEntryInput = require('../../validation/entry');
 // const multer = require('multer')              // multer will be used to handle the form data.
 // const Aws = require('aws-sdk')                // aws-sdk library will used to upload image to s3 bucket.
 
+<<<<<<< HEAD
+=======
+// const multer = require('multer')              // multer will be used to handle the form data.
+// const Aws = require('aws-sdk')                // aws-sdk library will used to upload image to s3 bucket.
+// // require("dotenv/config")                      // for using the environment variables that stores the confedential information.
+>>>>>>> f38f480afe10b5b0a499cd9dba6989186fd50812
 
 
 router.get(`/user/:user_id`, (req, res) => { // given user ID in params, returns all user's entries
@@ -70,10 +76,17 @@ router.delete('/:entry_id', (req, res) => { // given ENTRY ID, deletes entry,
 // const upload = multer({ storage: storage, fileFilter: filefilter });
 
 // const s3 = new Aws.S3({
+<<<<<<< HEAD
 //     accessKeyId: KEYS.AWS_ACCESS_KEY_ID,              // accessKeyId that is stored in .env file
 //     secretAccessKey: KEYS.AWS_ACCESS_KEY_SECRET     // secretAccessKey is also store in .env file
 // })
 
+=======
+//     accessKeyId:process.env.AWS_ACCESS_KEY_ID,              // accessKeyId that is stored in .env file
+//     secretAccessKey:process.env.AWS_ACCESS_KEY_SECRET       // secretAccessKey is also store in .env file
+// })
+//upload.single('productimage')
+>>>>>>> f38f480afe10b5b0a499cd9dba6989186fd50812
 
 router.post(`/`, (req, res) => { // given data object, creates new entry
     const { errors, isValid } = validateEntryInput(req.body);
@@ -82,7 +95,26 @@ router.post(`/`, (req, res) => { // given data object, creates new entry
         return res.status(400).json(errors);
     }
     
+<<<<<<< HEAD
  
+=======
+    // const params = {
+    //     Bucket:process.env.AWS_BUCKET_NAME,      // bucket that we made earlier
+    //     Key:req.file.originalname,               // Name of the image
+    //     Body:req.file.buffer,                    // Body which will contain the image in buffer format
+    //     ACL:"public-read-write",                 // defining the permissions to get the public link
+    //     ContentType:"image/jpeg"                 // Necessary to define the image content-type to view the photo in the browser with the link
+    // };
+    
+    // s3.upload(params,(error,data)=>{
+    //     if(error){
+    //         res.status(500).send({"err":error})  // if we get any error while uploading error message will be returned.
+    //     }
+        
+        
+        
+        
+>>>>>>> f38f480afe10b5b0a499cd9dba6989186fd50812
         const newEntry = new Entry({
             entry_photo_url: req.body.entry_photo_url,
             message: req.body.message,
