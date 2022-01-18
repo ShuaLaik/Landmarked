@@ -16,6 +16,6 @@ const mSTP = state => {
 }
 
 const mDTP = dispatch => ({
-    fetchAllUserEntries: userId => dispatch(fetchAllUserEntries(userId))
+    fetchEntries: userId => dispatch(fetchAllUserEntries(userId))
 })
 export default connect(mSTP, mDTP)(EntryIndex)
