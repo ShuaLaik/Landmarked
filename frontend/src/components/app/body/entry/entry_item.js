@@ -10,7 +10,7 @@ export default class EntryItem extends Component {
         return (
             <div className='entry'>
                 <img src={entry_photo_url} className="entry-image"></img>
-                <p className='entry-message'>{message}</p>
+                <h1 className='entry-message'>{message}</h1>
             </div>
         )
     }

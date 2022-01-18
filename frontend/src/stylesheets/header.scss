@@ -5,6 +5,12 @@
     justify-content: space-between;
     align-items: center;
     height: 30px;
+    box-shadow: 1px 1px 1px #A4BE5B 1px 1px 1em #515251;
+    border-bottom: 1px solid rgb(140, 161, 81)
+    h1{
+        font-size: 25px;
+        font-weight: 300;
+    }
 }
 .group{
     display: flex;

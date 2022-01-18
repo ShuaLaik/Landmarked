@@ -18,7 +18,7 @@ export default class EntryIndex extends Component {
         if (!entries) return null;
         
         return (
-            <div>
+            <div className="entry-index">
                 {entries.map(entry => (
                     <EntryItem entry={entry} key={Math.random()}/>
                 ))}
