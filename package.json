@@ -26,12 +26,14 @@
   "homepage": "https://github.com/ShuaLaik/Landmarked#readme",
   "dependencies": {
     "@googlemaps/react-wrapper": "^1.1.20",
+    "aws-sdk": "^2.1058.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.1",
     "concurrently": "^7.0.0",
     "express": "^4.17.2",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.1.6",
+    "multer": "^1.4.4",
     "passport": "^0.5.2",
     "passport-jwt": "^4.0.0",
     "validator": "^13.7.0"
