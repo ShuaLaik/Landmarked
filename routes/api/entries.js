@@ -82,7 +82,7 @@ router.post(`/`, upload.single('productimage'), (req, res) => { // given data ob
     }
     
     const params = {
-        Bucket:process.env.AWS_BUCKET_NAME,      // bucket that we made earlier
+        Bucket:KEYS.AWS_BUCKET_NAME,      // bucket that we made earlier
         Key:req.file.originalname,               // Name of the image
         Body:req.file.buffer,                    // Body which will contain the image in buffer format
         ACL:"public-read-write",                 // defining the permissions to get the public link
