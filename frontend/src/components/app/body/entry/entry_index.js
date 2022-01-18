@@ -9,7 +9,6 @@ export default class EntryIndex extends Component {
 
     componentDidMount() {
         const {fetchAllUserEntries, userId} = this.props;
-        debugger
         fetchAllUserEntries(userId);
     }
 
