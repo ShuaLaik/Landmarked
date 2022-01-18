@@ -76,17 +76,10 @@ router.delete('/:entry_id', (req, res) => { // given ENTRY ID, deletes entry,
 // const upload = multer({ storage: storage, fileFilter: filefilter });
 
 // const s3 = new Aws.S3({
-<<<<<<< HEAD
-//     accessKeyId: KEYS.AWS_ACCESS_KEY_ID,              // accessKeyId that is stored in .env file
-//     secretAccessKey: KEYS.AWS_ACCESS_KEY_SECRET     // secretAccessKey is also store in .env file
-// })
-
-=======
 //     accessKeyId:process.env.AWS_ACCESS_KEY_ID,              // accessKeyId that is stored in .env file
 //     secretAccessKey:process.env.AWS_ACCESS_KEY_SECRET       // secretAccessKey is also store in .env file
 // })
 //upload.single('productimage')
->>>>>>> f38f480afe10b5b0a499cd9dba6989186fd50812
 
 router.post(`/`, (req, res) => { // given data object, creates new entry
     const { errors, isValid } = validateEntryInput(req.body);
@@ -95,9 +88,6 @@ router.post(`/`, (req, res) => { // given data object, creates new entry
         return res.status(400).json(errors);
     }
     
-<<<<<<< HEAD
- 
-=======
     // const params = {
     //     Bucket:process.env.AWS_BUCKET_NAME,      // bucket that we made earlier
     //     Key:req.file.originalname,               // Name of the image
@@ -114,7 +104,6 @@ router.post(`/`, (req, res) => { // given data object, creates new entry
         
         
         
->>>>>>> f38f480afe10b5b0a499cd9dba6989186fd50812
         const newEntry = new Entry({
             entry_photo_url: req.body.entry_photo_url,
             message: req.body.message,
