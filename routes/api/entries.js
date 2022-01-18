@@ -2,10 +2,11 @@ const express = require("express");
 const router = express.Router();
 const Entry = require('../../models/Entry');
 const validateEntryInput = require('../../validation/entry');
+import * as KEYS from "./dotenv/config/keys"
 
 const multer = require('multer')              // multer will be used to handle the form data.
 const Aws = require('aws-sdk')                // aws-sdk library will used to upload image to s3 bucket.
-// require("dotenv/config")                      // for using the environment variables that stores the confedential information.
+
 
 
 router.get(`/user/:user_id`, (req, res) => { // given user ID in params, returns all user's entries
@@ -68,8 +69,8 @@ const filefilter = (req, file, cb) => {
 const upload = multer({ storage: storage, fileFilter: filefilter });
 
 const s3 = new Aws.S3({
-    accessKeyId:process.env.AWS_ACCESS_KEY_ID,              // accessKeyId that is stored in .env file
-    secretAccessKey:process.env.AWS_ACCESS_KEY_SECRET       // secretAccessKey is also store in .env file
+    accessKeyId: KEYS.AWS_ACCESS_KEY_ID,              // accessKeyId that is stored in .env file
+    secretAccessKey: KEYS.AWS_ACCESS_KEY_SECRET     // secretAccessKey is also store in .env file
 })
 
 
