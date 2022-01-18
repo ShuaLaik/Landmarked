@@ -2,7 +2,8 @@ const express = require("express");
 const router = express.Router();
 const Entry = require('../../models/Entry');
 const validateEntryInput = require('../../validation/entry');
-import * as KEYS from "./dotenv/config/keys"
+// import * as KEYS from "./dotenv/config/keys"
+const KEYS = require("./dotenv/config/keys") 
 
 const multer = require('multer')              // multer will be used to handle the form data.
 const Aws = require('aws-sdk')                // aws-sdk library will used to upload image to s3 bucket.
