@@ -4,6 +4,10 @@ import MapDiv from './map'
 import Sidebar from './sidebar'
 
 export default class Body extends Component {
+    componentDidMount(){
+        const {fetchAllUserEntries, user} = this.props;
+        fetchAllUserEntries(user.id);
+    }
     render() {
         return (
             <div id="body-container">

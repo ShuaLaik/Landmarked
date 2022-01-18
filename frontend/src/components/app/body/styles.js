@@ -199,7 +199,7 @@ export default [
                     "elementType": "geometry.fill",
                     "stylers": [
                     {
-                        "color": "#b9d3c2"
+                        "color": "#7AA3A7"
                     }
                     ]
                 },
@@ -211,6 +211,15 @@ export default [
                         "color": "#92998d"
                     }
                     ]
-                }
-                
+                },
+                // {
+                //     "feature": "poi",
+                //     "elementType": "labels",
+                //     "stylers": [
+                //         {
+                //             "visibility": "off"
+                //         }
+                //     ]
+                // }
+
                 ]
