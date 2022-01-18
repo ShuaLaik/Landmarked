@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "An online travel journal",
   "main": "app.js",
-  "engines":{
+  "engines": {
     "node": "16.13.0"
   },
   "scripts": {
@@ -43,6 +43,7 @@
     "validator": "^13.7.0"
   },
   "devDependencies": {
+    "mini-css-extract-plugin": "2.4.5",
     "nodemon": "^2.0.15"
   }
 }
