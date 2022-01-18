@@ -1,17 +1,16 @@
 @import 'reset.scss';
 @import 'header.scss';
 @import 'body.scss';
+@import 'session_form.scss';
 *, h1, h2, h3, h4, h5, h6{
     font-family: 'Josefin Sans', sans-serif;;
 }
 body{
-    border: 1px solid red;
+    background-color: #7AA3A7;
 }
 .main-page{
-    background-color: green;
 }
 input{
-    background-color: red;
 }
 
 

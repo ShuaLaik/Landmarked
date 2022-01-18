@@ -6,7 +6,6 @@ import { RECEIVE_ENTRIES,
   const entriesReducer = (prevState = {}, action) => {
     Object.freeze(prevState);
     let newState = Object.assign({}, prevState);
-    debugger
     switch(action.type) {
       case RECEIVE_ENTRIES:
           action.entries.data.forEach(entry => newState[entry._id] = entry) // data?

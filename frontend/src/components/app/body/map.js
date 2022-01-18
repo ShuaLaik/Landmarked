@@ -2,6 +2,17 @@ import React, { Component } from 'react'
 import MarkerManager from '../../../util/marker_manager';
 
 export default class MapDiv extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            num: 1
+        }
+    }
+    componentDidUpdate(prevProps){
+        if (prevProps.entries !== this.props.entries) {
+            this.setState({ num: this.state.num + 1})
+        }
+    }
     componentDidMount() {
 
         this.entrys = {
@@ -22,7 +33,9 @@ export default class MapDiv extends Component {
         this.map = new window.google.maps.Map(this.mapNode, mapOptions);
         this.MarkerManager = new MarkerManager(this.map);
         // this.registerListeners();
-        this.MarkerManager.updateMarkers(Object.values(this.entrys))
+        if (Object.values(this.props.entries) > 0){
+            this.MarkerManager.updateMarkers(Object.values(this.props.entrys))
+        }
     }
     render() {
         return <div id="map-container" ref={ map => this.mapNode = map } >Map</div>

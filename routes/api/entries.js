@@ -28,11 +28,9 @@ router.get('/location/:location_id', (req, res) => { // given location ID in par
 
 router.post(`/`, (req, res) => { // given data object, creates new entry
     const { errors, isValid } = validateEntryInput(req.body);
-
     if (!isValid) {
       return res.status(400).json(errors);
     }
-
     const newEntry = new Entry({
         entry_photo_url: req.body.entry_photo_url,
         message: req.body.message,
@@ -40,7 +38,6 @@ router.post(`/`, (req, res) => { // given data object, creates new entry
         // may need to add locationId here
         user: req.body.user
     });
-
     newEntry.save()
         .then(entry => res.json(entry))
 });

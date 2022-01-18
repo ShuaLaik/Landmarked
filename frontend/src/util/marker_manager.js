@@ -18,7 +18,7 @@ constructor(map){
     };
 
     createMarkerFromListing(entry) {
-        const position = new window.google.maps.LatLng(entry.location.latitude, entry.location.longitude);
+        const position = new window.google.maps.LatLng(parseInt(entry.location.latitude), parseInt(entry.location.longitude));
         const marker = new window.google.maps.Marker({
             position,
             map: this.map,

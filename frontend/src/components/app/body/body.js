@@ -7,7 +7,7 @@ export default class Body extends Component {
     render() {
         return (
             <div id="body-container">
-                <MapDiv />
+                <MapDiv entries={this.props.entries}/>
                 <Sidebar user={this.props.user}/>
             </div>
         )

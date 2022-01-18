@@ -18,15 +18,19 @@ export default class MainForm extends Component {
     }
     render() {
         return (
+            <div id="splash">
+                <img src="https://wallpaperaccess.com/full/1318548.jpg"/>
             <div className="splash-logged-out">
+                <h1>Landmarked</h1>
                 <div>
                     <ul>
                         <button onClick={this.handleClick("signup")}>Sign up</button>
                         <button onClick={this.handleClick("login")}>Login</button>
                     </ul>
-                </div>
                 {this.state.formType === "signup" ? <SignupFormContainer /> : <LoginFormContainer />}
-                <img src="https://images.pexels.com/photos/87651/earth-blue-planet-globe-planet-87651.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"/>
+                </div>
+                {/* <img src="https://images.pexels.com/photos/87651/earth-blue-planet-globe-planet-87651.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"/> */}
+            </div>
             </div>
         )
     }
