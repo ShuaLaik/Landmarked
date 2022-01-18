@@ -14,7 +14,6 @@ export const fetchAllLocationEntries = locationId => {
 };
 
 export const createEntry = entry => {
-  debugger
   return axios.post('/api/entries/', entry)
 };
 
