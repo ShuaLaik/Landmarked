@@ -52,14 +52,14 @@ export default class EntryForm extends Component {
                 formatted_address = response.data.results[0].formatted_address
                 newLatitude = String(response.data.results[0].geometry.location.lat)
                 newLongitude = String(response.data.results[0].geometry.location.lng)
-                const n = {
+                const stateCopy = {
                     address: formatted_address,
                     location: {
                         latitude: newLatitude,
                         longitude: newLongitude
                     }
                 }
-                const newState = Object.assign({}, this.state, n)
+                const newState = Object.assign({}, this.state, stateCopy)
                 delete newState.address
                 this.props.action(this.handleFormData(newState))
             })
@@ -69,12 +69,26 @@ export default class EntryForm extends Component {
     }
 
     render() {
+        debugger
         return (
-            <div>
+            <div className='form_modal_container'>
                 <form onSubmit={this.handleSubmit}>
-                    <input type="file" name="photo" onChange={this.handleFile}/> 
-                    <input type="text" value={this.state.address}  onChange={this.update("address")} />
-                    <input type="text" value={this.state.message} onChange={this.update("message")} />
+                    <label> File Upload
+                        <input type="file" name="photo" onChange={this.handleFile}/> 
+                    </label>
+                    <label> Address
+                        <input  type="text" 
+                                value={this.state.address}  
+                                onChange={this.update("address")} />
+                    </label>
+                    <br></br>
+                    <label> Message
+                        <input  
+                                type="text" 
+                                value={this.state.message} 
+                                onChange={this.update("message")} />
+                    </label>
+                    <br></br>
                     <button>Submit</button>
 
                 </form>

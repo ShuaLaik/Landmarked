@@ -7,6 +7,7 @@ const passport = require('passport');
 const path = require('path');
 
 const users = require("./routes/api/users");
+const trips = require("./routes/api/trips");
 const landmarks = require("./routes/api/landmarks");
 const entries = require('./routes/api/entries');
 if (process.env.NODE_ENV === 'production') {
@@ -28,9 +29,11 @@ require('./config/passport')(passport);
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.use("/api/users", users);
 // app.use("/api/landmarks", landmarks);
+app.use("/api/users", users);
 app.use("/api/entries", entries);
+app.use("/api/trips", trips);
+
 
 
 const port = process.env.PORT || 4500;

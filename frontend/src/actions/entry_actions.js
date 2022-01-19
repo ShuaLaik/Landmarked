@@ -4,6 +4,7 @@ export const RECEIVE_ENTRIES = "RECEIVE_ENTRIES";
 export const RECEIVE_ENTRY = "RECEIVE_ENTRY";
 export const REMOVE_ENTRY = "REMOVE_ENTRY";
 export const RECEIVE_ENTRY_ERRORS = "RECEIVE_ENTRY_ERRORS";
+export const RECEIVE_EDIT_ENTRY_OBJ = "RECEIVE_EDIT_ENTRY_OBJ";
 
 const receiveEntries = entries => ({
   type: RECEIVE_ENTRIES,
@@ -23,6 +24,11 @@ const removeEntry = entryId => ({
 const receiveEntryErrors = (errors) => ({
     type: RECEIVE_ENTRY_ERRORS,
     errors
+})
+
+export const receiveEditEntryObject = (entry) => ({
+  type: RECEIVE_EDIT_ENTRY_OBJ,
+  entry
 })
 
 export const fetchAllUserEntries = (userId) => dispatch => (

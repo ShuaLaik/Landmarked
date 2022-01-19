@@ -12,10 +12,10 @@ function Modal(props) {
   let component;
   switch (modal) {
     case 'createEntry':
-      component = <EntryFormContainer />;
+      component = <EntryFormContainer/>;
       break;
     case 'editEntry':
-      component = <EditFormContainer entry={props.entry}/>;
+      component = <EditFormContainer/>;
       break;
     default:
       return null;

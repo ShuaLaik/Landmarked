@@ -3,7 +3,7 @@ import ModalButtonContainer from '../../../modal/modal_button_container';
 
 export default class EntryItem extends Component {
     componentDidMount() {
-
+ 
     }
 
     render() {
@@ -13,6 +13,7 @@ export default class EntryItem extends Component {
                 <img src={entry_photo_url} className="entry-image" alt="Entry"/>
                 <h1 className='entry-message'>{message}</h1>
                 <ModalButtonContainer entry={this.props.entry} action={"editEntry"} buttonTitle={"Edit"}/>
+                <button onClick={() => this.props.deleteEntry(this.props.entry._id)}>Remove Entry</button>
             </div>
         )
     }

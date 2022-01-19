@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import EntryItem from './entry_item';
+import EntryItemContainer from './entry_item_container';
 
 
 export default class EntryIndex extends Component {
@@ -15,9 +15,11 @@ export default class EntryIndex extends Component {
         return (
             <div className="entry-index">
                 {entries.map(entry => (
-                    <EntryItem entry={entry} key={Math.random()}/>
+                    <EntryItemContainer entry={entry} key={Math.random()}/>
                 ))}
             </div>
         )
     }
 }
+
+
