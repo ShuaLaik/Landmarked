@@ -13,4 +13,20 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    height: 25vh;
+    width: 25vw;
   }
+
+.form_modal_container {
+  background-color: gray;
+  border: 1px solid black;
+  // text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  width: 100%;
+  form {
+    height: 100%;
+  }
+}

@@ -1,12 +1,26 @@
 import { connect } from "react-redux"
 import { openModal } from "../../actions/modal_actions"
 import React from 'react'
+import {receiveEditEntryObject} from '../../actions/entry_actions'
 
 class ModalButton extends React.Component {
+    constructor(props){
+        super(props)
+
+        this.handleClick = this.handleClick.bind(this)
+    }
+    handleClick () {
+        debugger
+        if (this.props.action === 'editEntry') {
+            this.props.receiveEditEntryObject(this.props.entry)
+        }
+        this.props.openModal(this.props.action)
+    }
 
     render () {
+        debugger
         return (
-            <button onClick={() => this.props.openModal(this.props.action)}>
+            <button onClick={this.handleClick}>
                 {this.props.buttonTitle}
             </button>
         )
@@ -21,7 +35,8 @@ const mSTP = (state, ownProps) => {
 }
 
 const mDTP = dispatch => ({
-    openModal: (modalName) => dispatch(openModal(modalName))
+    openModal: (modalName) => dispatch(openModal(modalName)),
+    receiveEditEntryObject: (entry) => dispatch(receiveEditEntryObject(entry))
 })
 
 export default connect(mSTP,mDTP)(ModalButton)
