@@ -13,14 +13,9 @@ export default class Sidebar extends Component {
     }
 
     render() {
-        // debugger
-        // if(!this.props.combinedTripsEntries) {
-        //     return (null)
-        // }
-        debugger
         return (
             <div>
-                <div className='entity-index-container'>
+                <div className='main-index-container'>
                     {this.props.combinedTripsEntries.map(entity => {
                         if (entity.type === 'trip'){
                             return <TripItemContainer trip={entity}/>
@@ -30,7 +25,7 @@ export default class Sidebar extends Component {
                     })
                     }
                 </div>
-                <div>
+                <div className='sidebar-button-container'>
                     <ModalButton 
                         action={'createEntry'} 
                         buttonTitle={"New Entry"}

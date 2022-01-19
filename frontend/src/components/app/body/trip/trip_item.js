@@ -21,7 +21,6 @@ export default class TripItem extends Component {
     }
 
     render() {
-        debugger
         const {trip} = this.props
         return (
             <div onClick={this.handleClick} className='trip-container'>
