@@ -1,12 +1,12 @@
 import { connect } from "react-redux"
 import { fetchAllUserTrips } from "../../../../actions/trip_actions"
-import EntryIndex from "./entry_index"
+import EntityIndex from "../entry/entity_index"
 
 
 const mSTP = state => {
     const userId = state.session.user.id
     return {
-        trips: Object.values(state.entities.trips).filter(trip => (
+        entities: Object.values(state.entities.trips).filter(trip => (
                 trip.user === userId
             ),  
         ),
@@ -18,4 +18,4 @@ const mSTP = state => {
 const mDTP = dispatch => ({
     action: userId => dispatch(fetchAllUserTrips(userId))
 })
-export default connect(mSTP, mDTP)(EntryIndex)
+export default connect(mSTP, mDTP)(EntityIndex)

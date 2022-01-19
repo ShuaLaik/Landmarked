@@ -3,10 +3,12 @@ import EntryItemContainer from './entry_item_container';
 import TripItemContainer from '../trip/trip_item_container';
 
 
+
 export default class EntityIndex extends Component {
     componentDidMount() {
         const {action, userId} = this.props;
         action(userId);
+        debugger
     }
 
     render() {
