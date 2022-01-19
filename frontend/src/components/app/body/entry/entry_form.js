@@ -96,7 +96,6 @@ export default class EntryForm extends Component {
                     </label>
                     <br></br>
                     <button>Submit</button>
-
                 </form>
             </div>
         )

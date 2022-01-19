@@ -68,6 +68,7 @@
             padding-top: 15px;
             padding-left: 10px;
             padding-bottom: 0px;
+            margin-bottom: 30px;
         }
         padding: 0px 0px 20px 0px;
 
@@ -77,6 +78,7 @@
         transition-duration: 0.5s;
         width: 23vw;
         background-color: #c2c0c0;
+        border-bottom: 1px solid black;
         button{
             transition-duration: 3s;
             transition-delay: 1s;
@@ -98,6 +100,8 @@
         transition-duration: 0.5s;
         width: 23vw;
         background-color: #c2c0c0;
+        border-bottom: 1px solid black;
+
         button{
             transition-duration: 3s;
             transition-delay: 1s;
