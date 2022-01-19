@@ -28,8 +28,11 @@ export default class TripItem extends Component {
                 <div className='entities-container'>
                     {
                         this.props.tripEntries.map(tripEntry => {
-                            return (<EntryItemContainer entry={tripEntry}/>)
-                        }
+                            return (
+                            <div className='trip-entry-item-container'>
+                                <EntryItemContainer entry={tripEntry}/>
+                            </div>
+                            )}
                     )
                     }
                 </div>

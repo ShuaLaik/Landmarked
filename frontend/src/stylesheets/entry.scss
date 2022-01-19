@@ -1,10 +1,14 @@
+.sidebar-container {
+    
+}
+
 .main-index-container{
     width: 15vw;
     display: flex;
     flex-direction: column;
     height: 90%;
 
-    .entry-container{
+    .single-entry-item-container{
         display: flex;
         flex-direction: row;
         height: 40px;
@@ -37,7 +41,7 @@
                 padding-bottom: 0px;
             }
     }
-    .entry-container:hover{
+    .single-entry-item-container:hover{
         transition-duration: 0.5s;
         width: 23vw;
         background-color: #c2c0c0;
@@ -51,7 +55,7 @@
             h1 {
                 width: 15vw;
             }
-            .entry-container:not( :hover ){
+            .single-entry-item-container:not( :hover ){
                 transition-duration: 0.5s;
                 width: 15vw;
             }
