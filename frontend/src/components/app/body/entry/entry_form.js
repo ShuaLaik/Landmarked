@@ -29,6 +29,7 @@ export default class EntryForm extends Component {
     handleFormData(state){
         let formData = new FormData();
         formData.append("entry[message]", state.message)
+        formData.append("entry[title]", state.title)
         formData.append("entry[location][longitude]", state.location.longitude)
         formData.append("entry[location][latitude]", state.location.latitude)
         formData.append("entry[photo]", state.photoFile)
@@ -80,6 +81,13 @@ export default class EntryForm extends Component {
                         <input  type="text" 
                                 value={this.state.address}  
                                 onChange={this.update("address")} />
+                    </label>
+                    <br></br>
+                    <label> Title
+                        <input  
+                                type="text" 
+                                value={this.state.title} 
+                                onChange={this.update("title")} />
                     </label>
                     <br></br>
                     <label> Message

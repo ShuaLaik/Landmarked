@@ -10,7 +10,6 @@ class ModalButton extends React.Component {
         this.handleClick = this.handleClick.bind(this)
     }
     handleClick () {
-        debugger
         if (this.props.action === 'editEntry') {
             this.props.receiveEditEntryObject(this.props.entry)
         }
@@ -18,7 +17,6 @@ class ModalButton extends React.Component {
     }
 
     render () {
-        debugger
         return (
             <button onClick={this.handleClick}>
                 {this.props.buttonTitle}
