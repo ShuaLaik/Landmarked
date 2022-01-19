@@ -2,11 +2,14 @@
 @import 'header.scss';
 @import 'body.scss';
 @import 'session_form.scss';
+@import 'entry.scss';
+@import 'modal.scss';
+
 *, h1, h2, h3, h4, h5, h6{
     font-family: 'Josefin Sans', sans-serif;;
 }
 body{
-    background-color: #7AA3A7;
+    background-color: #DDDEDE;
 }
 .main-page{
 }

@@ -9,7 +9,7 @@ constructor(map){
     updateMarkers(entrys){
         const entrysObj = {};
         entrys.forEach(entry => entrysObj[entry.id] = entry)
-
+    debugger
         let nonExistent = entrys.filter(entry => !this.markers[entry.id])
         nonExistent.forEach(newEntry => this.createMarkerFromListing(newEntry))
 
@@ -18,7 +18,8 @@ constructor(map){
     };
 
     createMarkerFromListing(entry) {
-        const position = new window.google.maps.LatLng(parseInt(entry.location.latitude), parseInt(entry.location.longitude));
+        debugger;
+        const position = new window.google.maps.LatLng(parseFloat(entry.location.latitude), parseFloat(entry.location.longitude));
         const marker = new window.google.maps.Marker({
             position,
             map: this.map,

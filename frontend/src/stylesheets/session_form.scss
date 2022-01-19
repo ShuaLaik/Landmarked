@@ -2,11 +2,16 @@
     #splash{
         display: flex;
         justify-content: center;
+            
     }
     .splash-logged-out{
         display: flex;
         justify-content: center;
         flex-direction: column;
+        align-items: center;
+        position: absolute;
+        left: 30vw;
+        top: 20vh;
         
     }
 }

@@ -9,7 +9,6 @@ export default class EntryIndex extends Component {
 
     componentDidMount() {
         const {fetchAllUserEntries, userId} = this.props;
-        debugger
         fetchAllUserEntries(userId);
     }
 
@@ -18,7 +17,7 @@ export default class EntryIndex extends Component {
         if (!entries) return null;
         
         return (
-            <div>
+            <div className="entry-index">
                 {entries.map(entry => (
                     <EntryItem entry={entry} key={Math.random()}/>
                 ))}

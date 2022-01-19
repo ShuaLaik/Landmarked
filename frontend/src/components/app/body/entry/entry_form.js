@@ -61,7 +61,6 @@ export default class EntryForm extends Component {
                 }
                 const newState = Object.assign({}, this.state, n)
                 delete newState.address
-                debugger
                 this.props.action(this.handleFormData(newState))
             })
 
