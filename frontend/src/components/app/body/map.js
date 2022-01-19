@@ -25,7 +25,6 @@ export default class MapDiv extends Component {
             clickableIcons: false,
             styles: Style //Style defaults are set in styles.js
         };
-        debugger
         // wrap this.mapNode in a Google Map
         this.map = new window.google.maps.Map(this.mapNode, mapOptions);
         this.MarkerManager = new MarkerManager(this.map);

@@ -95,7 +95,6 @@ router.post(`/`, upload.single('entry[photo]'), (req, res) => { // given data ob
     s3.upload(params,(error,data)=>{
         if(error){
             res.status(500).send({"err":error})  // if we get any error while uploading error message will be returned.
-            console.log(error)
             return
         }
         const newEntry = new Entry({

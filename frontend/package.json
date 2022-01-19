@@ -10,7 +10,6 @@
     "@testing-library/user-event": "^13.5.0",
     "@types/google-maps": "^3.2.3",
     "axios": "^0.24.0",
-    "google-maps-react": "^2.0.6",
     "jquery": "^3.6.0",
     "jwt-decode": "^3.1.2",
     "node-sass": "^7.0.1",
@@ -18,7 +17,7 @@
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.6",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^4.0.1",
+    "react-scripts": "^5.0.0",
     "redux": "^4.1.2",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.4.1",
@@ -49,6 +48,7 @@
     ]
   },
   "devDependencies": {
-    "mini-css-extract-plugin": "2.4.5"
+    "i": "0.3.7",
+    "npm": "8.3.1"
   }
 }

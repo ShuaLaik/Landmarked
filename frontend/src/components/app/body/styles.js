@@ -1,4 +1,4 @@
-export default [
+const Style = [
                 {
                     "elementType": "geometry",
                     "stylers": [
@@ -223,3 +223,5 @@ export default [
                 // }
 
                 ]
+
+export default Style;
