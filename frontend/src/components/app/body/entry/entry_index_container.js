@@ -10,7 +10,8 @@ const mSTP = state => {
                 entry.user === userId
             ),  
         ),
-        userId
+        userId,
+        type: 'entry'
     }
 }
 
