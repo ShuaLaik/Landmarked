@@ -12,6 +12,10 @@ module.exports = function validateEntryInput(data) {
       errors.message = 'Message field is required';
     }
 
+    if (Validator.isEmpty(data.title)) {
+      errors.message = 'title field is required';
+    }
+
     if (Validator.isEmpty(data.location.longitude)) {
         errors.location.longitude = 'A longitude is required';
     }

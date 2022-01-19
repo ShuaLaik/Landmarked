@@ -5,6 +5,10 @@ const EntrySchema = new Schema({
     entry_photo_url: {
         type: String
     },
+    title: {
+        type: String,
+        required: true
+    },
     message: {  
         type: String,
         required: true
@@ -18,6 +22,10 @@ const EntrySchema = new Schema({
             type: Number,
             required: true
         }
+    },
+    trip: {
+        type: Schema.Types.ObjectId,
+        ref: Trip
     },
     location_id: String, // this is placeholder if/when we identify location with one number, until 
     // then we will use lat/long

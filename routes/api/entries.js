@@ -30,6 +30,15 @@ router.get('/location/:location_id', (req, res) => { // given location ID in par
     );
 });
 
+router.get('/trip/:trip_id', (req, res) => { // given location ID in params, returns all trip's entries
+    Entry  
+    .find({ trip: req.params.trip_id})
+    .then(trips => res.json(trips))
+    .catch(err => res.status(404).json({ noentriesfound: 'no entries found from this trip' }
+    )
+    );
+});
+
 router.patch('/:entry_id', (req, res) => {
     const { errors, isValid } = validateEntryInput(req.body);
     
