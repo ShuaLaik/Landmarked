@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
 import LoginFormContainer from './login_form_container'
 import SignupFormContainer from './signup_form_container'
 
@@ -19,7 +18,7 @@ export default class MainForm extends Component {
     render() {
         return (
             <div id="splash">
-                <img src="https://wallpaperaccess.com/full/1318548.jpg"/>
+                <img src="https://wallpaperaccess.com/full/1318548.jpg" alt="Default Text"/>
             <div className="splash-logged-out">
                 <h1>Landmarked</h1>
                 <div>

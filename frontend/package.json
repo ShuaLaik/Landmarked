@@ -10,7 +10,6 @@
     "@testing-library/user-event": "^13.5.0",
     "@types/google-maps": "^3.2.3",
     "axios": "^0.24.0",
-    "google-maps-react": "^2.0.6",
     "jquery": "^3.6.0",
     "jwt-decode": "^3.1.2",
     "node-sass": "^7.0.1",
@@ -47,5 +46,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "i": "0.3.7",
+    "npm": "8.3.1"
   }
 }

@@ -3,9 +3,6 @@ import { openModal } from "../../actions/modal_actions"
 import React from 'react'
 
 class ModalButton extends React.Component {
-    constructor(props){
-        super(props)
-    }
 
     render () {
         return (
