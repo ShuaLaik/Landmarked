@@ -15,6 +15,10 @@ module.exports = function validateTripInput(data) {
       errors.message = 'User info is empty';
     }
 
+    if (Validator.isEmpty(data.type)) {
+      errors.message = 'Type is empty';
+    }
+
     return {
       errors,
       isValid: Object.keys(errors).length === 0

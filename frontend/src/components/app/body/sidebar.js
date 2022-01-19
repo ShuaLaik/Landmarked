@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 // import EntryFormContainer from './entry/entry_form_container'
-import EntryIndexContainer from './entry/entry_index_container'
-import TripIndexContainer from './trip/trip_index_container'
+import EntryItemContainer from './entry/entry_item_container'
+import TripItemContainer from './trip/trip_item_container'
 
 import ModalButton from '../../modal/modal_button_container'
 
@@ -12,29 +12,34 @@ export default class Sidebar extends Component {
         this.state = { display: 'entries'};
     }
 
-    determineComponent() {
-        switch(this.state.display){
-            case 'entries':
-                return <EntryIndexContainer />;
-            case 'trips':
-                return <TripIndexContainer />;
-        }       
-    }
-
-
     render() {
+        // debugger
+        // if(!this.props.combinedTripsEntries) {
+        //     return (null)
+        // }
+        debugger
         return (
             <div>
-                <ModalButton 
-                action={'createEntry'} 
-                buttonTitle={"Create Entry"}/>
-                <button onClick={() => this.setState({display: 'entries'})}>
-                    entries
-                </button>
-                <button onClick={() => this.setState({display: 'trips'})}>
-                    trips
-                </button>
-                { this.determineComponent() }
+                <div className='entity-index-container'>
+                    {this.props.combinedTripsEntries.map(entity => {
+                        if (entity.type === 'trip'){
+                            return <TripItemContainer trip={entity}/>
+                        } else if (entity.type === 'entry'){
+                            return <EntryItemContainer entry={entity}/>
+                        }
+                    })
+                    }
+                </div>
+                <div>
+                    <ModalButton 
+                        action={'createEntry'} 
+                        buttonTitle={"New Entry"}
+                    />
+                    <ModalButton 
+                        action={'createTrip'} 
+                        buttonTitle={"New Trip"}
+                    />
+                </div>
             </div>
         )
     }

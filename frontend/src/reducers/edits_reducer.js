@@ -2,8 +2,7 @@ import { RECEIVE_EDIT_ENTRY_OBJ } from "../actions/entry_actions";
 
 
 
-const editsReducer = (state = {}, action) => {
-  debugger
+const editsReducer = (state = null, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_EDIT_ENTRY_OBJ:

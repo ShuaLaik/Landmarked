@@ -35,10 +35,10 @@ router.post(`/`, (req, res) => { // given user ID in params, returns all user's 
     }
 
     const newTrip = new Trip({
-        name: req.body.name,
-        user: req.body.user
+        title: req.body.title,
+        user: req.body.user,
+        type: 'trip'
     });
-    
     newTrip.save()
     .then(trip => res.json(trip))
     .catch(err => res.status(404).json({ invalidtrip: 'trip is invalid' }))
@@ -52,8 +52,8 @@ router.patch('/:trip_id', (req, res) => {
     }
     
     Entry.findByIdAndUpdate(req.params.trip_id, req.body)
-    .then(trip => res.json(trip))
-    .catch(err => res.status(404).json({ noentryfound: 'no trip found from this trip ID' }
+        .then(trip => res.json(trip))
+        .catch(err => res.status(404).json({ noentryfound: 'no trip found from this trip ID' }
     )
     );
     

@@ -27,6 +27,10 @@ const EntrySchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: Trip
     },
+    type: {
+        type: String,
+        required: true
+    },
     location_id: String, // this is placeholder if/when we identify location with one number, until 
     // then we will use lat/long
     user: {
