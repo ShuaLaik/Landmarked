@@ -20,6 +20,7 @@ export default class EntryForm extends Component {
             fileReader.readAsDataURL(file);
         }
     }
+
     update(field){
         return e => {
             this.setState({ [field]: e.currentTarget.value })
@@ -34,8 +35,8 @@ export default class EntryForm extends Component {
         formData.append("entry[location][latitude]", state.location.latitude)
         formData.append("entry[photo]", state.photoFile)
         formData.append("entry[user]", state.user)
+        formData.append("entry[trip]", state.trip)
         return formData;
-
     }
 
     handleSubmit(e) {
@@ -64,13 +65,10 @@ export default class EntryForm extends Component {
                 delete newState.address
                 this.props.action(this.handleFormData(newState))
             })
-
         let formatted_address, newLatitude, newLongitude
-        
     }
 
     render() {
-        debugger
         return (
             <div className='form_modal_container'>
                 <form onSubmit={this.handleSubmit}>

@@ -107,13 +107,13 @@ router.post(`/`, upload.single('entry[photo]'), (req, res) => { // given data ob
             return
         }
         const newEntry = new Entry({
-            
             entry_photo_url: data.Location,
             title: req.body.entry.title,
             message: req.body.entry.message,
             location: req.body.entry.location, // latitude/longitude embedded
             // may need to add locationId here
             user: req.body.entry.user,
+            trip: req.body.entry.trip,
             type: 'entry'
         });
         newEntry.save()
