@@ -64,7 +64,6 @@ constructor(map){
         });
   
         line.setMap(this.map)
-        debugger
     }
 }
   

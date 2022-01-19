@@ -1,5 +1,6 @@
 import { connect } from "react-redux"
 import { createEntry } from "../../../../actions/entry_actions"
+import { closeModal } from "../../../../actions/modal_actions"
 import EntryForm from "./entry_form"
 
 
@@ -18,6 +19,7 @@ const mSTP = (state, ownProps) => ({
     }
 })
 const mDTP = dispatch => ({
-    action: entry => dispatch(createEntry(entry))
+    action: entry => dispatch(createEntry(entry)),
+    closeModal: () => dispatch(closeModal)
 })
 export default connect(mSTP, mDTP)(EntryForm)

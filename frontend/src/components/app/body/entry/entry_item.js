@@ -9,7 +9,7 @@ export default class EntryItem extends Component {
     render() {
         const {entry_photo_url, message} = this.props.entry
         return (
-            <div className='entry-container'>
+            <div>
                 <img src={entry_photo_url} className="entry-image" alt="Entry"/>
                 <h1 className='entry-message'>{message}</h1>
                     <ModalButtonContainer entry={this.props.entry} action={"editEntry"} buttonTitle={"Edit"}/>

@@ -65,6 +65,7 @@ export default class EntryForm extends Component {
                 delete newState.address
                 this.props.action(this.handleFormData(newState))
             })
+        this.props.closeModal()
         let formatted_address, newLatitude, newLongitude
     }
 
