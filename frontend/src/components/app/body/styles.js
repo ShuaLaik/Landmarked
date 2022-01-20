@@ -212,15 +212,15 @@ const Style = [
                     }
                     ]
                 },
-                // {
-                //     "feature": "poi",
-                //     "elementType": "labels",
-                //     "stylers": [
-                //         {
-                //             "visibility": "off"
-                //         }
-                //     ]
-                // }
+                {
+                    "feature": "transit",
+                    "elementType": "labels",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                }
 
                 ]
 

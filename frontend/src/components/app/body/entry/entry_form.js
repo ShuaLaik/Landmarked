@@ -13,10 +13,9 @@ export default class EntryForm extends Component {
     handleFile(e){
         const file = e.currentTarget.files[0];
         const fileReader = new FileReader();
-        this.setState({photoFile: e.currentTarget.files[0], photoUrl: fileReader.results})
-        fileReader.onloadend = () => {
-
-        }
+        fileReader.onloadend = function () {
+            this.setState({photoFile: file, photoUrl: fileReader.result })
+        }.bind(this)
         if (file){
             fileReader.readAsDataURL(file);
         }
@@ -73,36 +72,31 @@ export default class EntryForm extends Component {
 
     render() {
         return (
-            <div className='form-modal-container'>
-                <form onSubmit={this.handleSubmit}>
-                    <label> 
-                        <input  type="text" 
-                                value={this.state.address}  
-                                onChange={this.update("address")} 
-                                placeholder="Address"/>
-                    </label>
-                    <br></br>
-                    <label> 
+                <form onSubmit={this.handleSubmit} className="show-container">
+                    <ul>
                         <input  
-                                type="text" 
-                                value={this.state.title} 
-                                onChange={this.update("title")} 
-                                placeholder="Title"/>
-                    </label>
-                    <br></br>
-                    <label> 
+                            type="text"
+                            className="h1" 
+                            value={this.state.title} 
+                            onChange={this.update("title")} 
+                            placeholder="Title"/>
+                        <input  type="text" 
+                            className="h2"
+                            value={this.state.address}  
+                            onChange={this.update("address")} 
+                            placeholder="Address"/>
+
                         <textarea  
-                                value={this.state.message} 
-                                onChange={this.update("message")}
-                                placeholder="Message" />
-                    </label>
-                     <label> 
+                            value={this.state.message} 
+                            onChange={this.update("message")}
+                            placeholder="Message" />
                         <input type="file" name="photo" onChange={this.handleFile}/> 
-                    </label>
-                    <br></br>
-                    <button>Submit</button>
+                        <button>Submit</button>
+                        </ul>
+                        <div>
+                        {this.state.photoFile === "" ? null : <img src={this.state.photoUrl} />}
+                        </div>
                 </form>
-            </div>
         )
     }
 }

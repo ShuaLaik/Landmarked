@@ -11,6 +11,7 @@ export default class EntryItem extends Component {
     }
     handleClick(){
         this.props.receiveEditEntryObject(this.props.entry)
+        this.props.openModal("showEntry")
     }
 
     render() {
