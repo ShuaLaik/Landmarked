@@ -5,12 +5,22 @@ import Style from "./styles"
 export default class MapDiv extends Component {
 
     componentDidUpdate(prevProps){
-        if (prevProps.entries === this.props.entries) {
-            if (Object.values(this.props.entries)){
-            this.MarkerManager.updateMarkers(Object.values(this.props.entries))
+        // if (prevProps.entries === this.props.entries) {
+        //     if (Object.values(this.props.entries)){
+        //     this.MarkerManager.updateMarkers(Object.values(this.props.entries))
     
+        //     }
+        // }
+
+        // if (prevProps.entries === this.props.tripEntries) {
+            
+            if (Object.values(this.props.tripEntries)){ //selected trips
+            this.MarkerManager.updateMarkers(Object.values(this.props.tripEntries), true)
+    
+            } else { //all entries
+                this.MarkerManager.updateMarkers(Object.values(this.props.entries), false)
             }
-        }
+        
     }
     componentDidMount() {
         const mapOptions = {
@@ -29,12 +39,13 @@ export default class MapDiv extends Component {
         this.map = new window.google.maps.Map(this.mapNode, mapOptions);
         this.MarkerManager = new MarkerManager(this.map);
         // this.registerListeners();
-        if (Object.values(this.props.entries)){
+        
+            if (Object.values(this.props.entries)){
             this.MarkerManager.updateMarkers(Object.values(this.props.entries))
-        // this.MarkerManager.updateMarkers(Object.keys(this.props.entries)[0])
-        }
+            }
     }
     render() {
+        
         return <div id="map-container" ref={ map => this.mapNode = map } >Map</div>
     }
 }
