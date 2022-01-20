@@ -38,7 +38,7 @@ export default class EntryForm extends Component {
         formData.append("entry[photo]", state.photoFile)
         formData.append("entry[user]", state.user)
         debugger
-        if (this.state.trip !== '') {
+        if (this.state.trip) {
             formData.append("entry[trip]", state.trip)
         }
         return formData;

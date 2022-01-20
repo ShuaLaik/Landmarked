@@ -10,9 +10,11 @@ export default class MapDiv extends Component {
             this.changeZoom(Object.values(this.props.tripEntries))
         } else { //all entries
             this.MarkerManager.updateMarkers(Object.values(this.props.entries), false)
+            this.changeZoom(Object.values(this.props.entries))
             // changeZoom(this.props.tripEntries)
         }
     }
+      
 
     getCorners (entrys) {
         let coordinates = []; // smallest x smallest y 
@@ -39,6 +41,11 @@ export default class MapDiv extends Component {
         debugger
         // google.maps.event.addListenerOnce(map, 'bounds_changed', () => {
         this.map.fitBounds(bounds)
+
+        // var listener = window.google.maps.event.addListener(this.map, "idle", function() { 
+        //     if (this.map.getZoom() > 16) this.map.setZoom(16); 
+        //     window.google.maps.event.removeListener(listener); 
+        //   });
     }
 
     componentDidMount() {

@@ -26,7 +26,6 @@ router.get(`/:trip_id`, (req, res) => { // given user ID in params, returns all 
     );
 });
 
-
 router.post(`/`, (req, res) => { 
     const { errors, isValid } = validateTripInput(req.body);
     
@@ -60,10 +59,15 @@ router.patch('/:trip_id', (req, res) => {
 
 router.delete('/:trip_id', (req, res) => { // given TRIP ID, deletes trip,
     // does not return deleted object, returns delete confirmation
+
+    
     Trip
     .deleteOne({_id: req.params.trip_id})
     .then(trip => res.json(trip))
     .catch(err => res.status(404).json({ notripfound: 'no trips found' }))
+
+    // Entry  
+    //     .find({ trip: req.params.trip_id})
 });
 
 module.exports = router;

@@ -26,7 +26,7 @@ const EntrySchema = new Schema({
     trip: {
         type: mongoose.Types.ObjectId,
         ref: Trip,
-        retuired: false
+        required: false
     },
     type: {
         type: String,
