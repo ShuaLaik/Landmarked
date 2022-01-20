@@ -5,6 +5,8 @@ import EntryItemContainer from '../entry/entry_item_container'
 export default class TripItem extends Component {
     constructor(props){
         super(props)
+        this.state = {active: "hidden"}
+        
         this.handleClick = this.handleClick.bind(this)
         this.handleDelete = this.handleDelete.bind(this)
     }
@@ -21,11 +23,13 @@ export default class TripItem extends Component {
     }
 
     render() {
-        const {trip} = this.props
+        const {trip} = this.props;
+        let active = "hidden";
+        this.props.currentTrip === this.props.trip._id ? active = "entities-container" : active = "hidden"
         return (
             <div onClick={this.handleClick} className='trip-container'>
                 <h1 className='trip-title'>{trip.title}</h1>
-                <div className='entities-container'>
+                <div  className={active}>
                     {
                         this.props.tripEntries.map(tripEntry => {
                             return (

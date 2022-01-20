@@ -26,19 +26,35 @@
         text-indent: center;
         }
     .trip-entry-item-container{
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        transition-duration: 1s;
+        height: 40px;
+        z-index: 1;
+        background-color: #A4BE5B;
+        transition-duration: 2s;
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        div{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    .hidden{
         display: none;
-        height:0px;
     }
 }
     .entities-container{
         
     }
-.trip-container:hover + .entities-container{
+.trip-container:focus + .entities-container{
     transition-duration: 1s;
     display: flex;
 
 }
-.trip-container > .trip-entry-item-container:hover{
+.trip-container > .trip-entry-item-container:focus{
     display: flex;
     background-color: #A4BE5B;
     cursor: pointer;
@@ -64,7 +80,7 @@
         display: flex;
         flex-direction: row;
     }
-    .trip-entry-item-container{
+    .trip-entry-item-container, .trip-entry-item-container:focus{
         cursor: pointer;
     transition-duration: 1s;
     height: 40px;
