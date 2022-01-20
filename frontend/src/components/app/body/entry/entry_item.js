@@ -5,7 +5,7 @@ export default class EntryItem extends Component {
     constructor(props){
         super(props)
         this.handleClick = this.handleClick.bind(this)
-    }
+    } 
     componentDidMount() {
  
     }

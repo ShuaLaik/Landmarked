@@ -1,7 +1,7 @@
 import { connect } from "react-redux"
 import TripItem from "./trip_item"
-import { deleteTrip } from '../../../../actions/trip_actions'
-import { receiveTripId } from '../../../../actions/map_actions'
+import { deleteTrip, updateTrip } from '../../../../actions/trip_actions'
+import { receiveTripId, resetTripId } from '../../../../actions/map_actions'
 
 const mSTP = (state, ownProps) => {
     let tripEntries = Object.values(state.entities.entries)
@@ -14,7 +14,9 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => ({
     deleteTrip: tripId => dispatch(deleteTrip(tripId)),
-    receiveTripId: tripId => dispatch(receiveTripId(tripId))
+    updateTrip: trip => dispatch(updateTrip(trip)),
+    receiveTripId: tripId => dispatch(receiveTripId(tripId)),
+    resetTripId: tripId => dispatch(resetTripId(tripId))
 })
 
 export default connect(mSTP, mDTP)(TripItem)

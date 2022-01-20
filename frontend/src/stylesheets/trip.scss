@@ -2,11 +2,13 @@
     background-color: rgb(147, 170, 85);
     transition-duration: .5s;
     border-bottom: 2px solid rgb(122, 141, 70);
-    h1{
+    input {
+        background: transparent;
+        border: none;
         transition-duration: .5s;
         padding: 10px;
         font-size: 25px;
-        width: 30%;
+        width: 75%;
         white-space: nowrap;
         text-overflow: ellipsis;
         font-weight: 300;
@@ -67,9 +69,11 @@
     width: 100%;
     border-bottom: 1px solid rgb(83, 83, 83);
     background-color: #A4BE5B;
-    h1{
+    input {
+        background: transparent;
+        border: none;
         transition-duration: .5s;
-        font-size: 30px;
+        width: 75%;
         width: inherit;
     }
     button{
