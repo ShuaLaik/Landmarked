@@ -13,14 +13,6 @@ export default class Sidebar extends Component {
     }
 
     render() {
-<<<<<<< HEAD
-=======
-        // debugger
-        // if(!this.props.combinedTripsEntries) {
-        //     return (null)
-        // }
-        
->>>>>>> trip-integration-map
         return (
             <div className='sidebar-container'>
                 <div className='main-index-container'>

@@ -24,9 +24,9 @@ const EntrySchema = new Schema({
         }
     },
     trip: {
-        type: Schema.Types.ObjectId,
+        type: mongoose.Types.ObjectId,
         ref: Trip,
-        default: null
+        retuired: false
     },
     type: {
         type: String,
@@ -35,7 +35,7 @@ const EntrySchema = new Schema({
     location_id: String, // this is placeholder if/when we identify location with one number, until 
     // then we will use lat/long
     user: {
-        type: Schema.Types.ObjectId, 
+        type: mongoose.Types.ObjectId, 
         ref: User
     }
 }, {
