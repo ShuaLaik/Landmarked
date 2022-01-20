@@ -1,4 +1,6 @@
 import * as TripAPIUtil from '../util/trip_api_util';
+import { receiveEntries } from './entry_actions';
+
 
 export const RECEIVE_TRIPS = "RECEIVE_TRIPS";
 export const RECEIVE_TRIP = "RECEIVE_TRIP";
@@ -50,7 +52,7 @@ export const updateTrip = (trip) => dispatch => (
 
 export const deleteTrip = (tripId) => dispatch => (
     TripAPIUtil.deleteTrip(tripId)
-        .then(() => dispatch(removeTrip(tripId)), 
-        err => dispatch(receiveTripErrors(err.responseJSON))
-    )
+        .then(entries => dispatch(receiveEntries(entries)))
+    .then(() => dispatch(removeTrip(tripId)))
+    .catch(err => dispatch(receiveTripErrors(err.responseJSON)))
 );

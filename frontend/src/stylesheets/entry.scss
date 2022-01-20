@@ -1,5 +1,5 @@
 .sidebar-container {
-        position: sticky;
+    position: sticky;
     bottom: 0px;
     transition-duration: 3s;
     display: flex;
@@ -43,7 +43,7 @@
         text-indent: center;
         }
         .div{
-            transition-duration: .5s;
+            transition-duration: .2s;
             display:flex;
             flex-direction: column;
             // align-content: center;
@@ -56,6 +56,7 @@
     }
     .single-entry-item-container:hover{
         transition-duration: .5s;
+        cursor: pointer;
         height: 100px;
         // width: 100%;
         border-bottom: 1px solid #2B3032;
@@ -71,7 +72,7 @@
             flex-direction: row;
         }
         .trip-entry-item-container{   
-            width: 100%; 
+            width: 75%; 
             transition-duration: .5s;
             display:flex;
             flex-direction: column;

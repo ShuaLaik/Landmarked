@@ -5,21 +5,49 @@ import EntryItemContainer from '../entry/entry_item_container'
 export default class TripItem extends Component {
     constructor(props){
         super(props)
-        this.state = {active: "hidden"}
-        
+        this.state = {
+            trip: this.props.trip,
+            disabled: true
+        }
+        debugger
         this.handleClick = this.handleClick.bind(this)
         this.handleDelete = this.handleDelete.bind(this)
+        this.submitNewTripTitle = this.submitNewTripTitle.bind(this)
+        this.handleTitleClick = this.handleTitleClick.bind(this)
     }
-
+    // ------------------------------------------------------------------------------
     handleClick () {
         const {receiveTripId, trip } = this.props;
         receiveTripId(trip._id)
     }
 
+    handleTitleClick (e) {
+        this.switchTitleToForm();
+        e.target.select();
+    }
+    
     handleDelete(e) {
         e.stopPropagation();
-        const {deleteTrip, trip } = this.props;
-        deleteTrip(trip._id)
+        const {deleteTrip, resetTripId, trip } = this.props;
+        deleteTrip(trip._id) // deletes trip from DB and state, converts all trip entries (if any) to regular entries
+        resetTripId(); // updates UI slice of state so no current trip is selected
+    }
+    // ------------------------------------------------------------------------------
+
+    update(field){
+        return e => {
+            this.setState({trip: Object.assign({}, this.state.trip, {[field]: e.target.value})})
+        }
+    }
+    
+    submitNewTripTitle(e) {
+        debugger
+        e.preventDefault();
+        this.props.updateTrip(this.state.trip)
+    }
+
+    switchTitleToForm () {
+        this.setState({ disabled: !this.state.disabled})
     }
 
     render() {
@@ -28,20 +56,22 @@ export default class TripItem extends Component {
         this.props.currentTrip === this.props.trip._id ? active = "entities-container" : active = "hidden"
         return (
             <div onClick={this.handleClick} className='trip-container'>
-                <h1 className='trip-title'>{trip.title}</h1>
-                <div  className={active}>
+                <form onClick={this.handleTitleClick} onSubmit={this.submitNewTripTitle}>
+                    <input  type="text" 
+                            value={this.state.trip.title}
+                            disabled={this.state.disabled}
+                            onChange={this.update('title')}  
+                    /> 
+                </form>
+                <div className={active}>
                     {
                         this.props.tripEntries.map(tripEntry => {
                             return (
-                            // <div className='trip-entry-item-container'>
                                 <EntryItemContainer entry={tripEntry}/>
-                            // </div>
-                            )}
-                    )
+                            )})
                     }
                 </div>
                 <div id="trip-buttons">
-                    <ModalButtonContainer trip={trip} action={"editTrip"} buttonTitle={"Edit Trip"}/>
                     <ModalButtonContainer trip={trip} action={"createEntry"} buttonTitle={"Add Entry"}/>
                     <button onClick={this.handleDelete}>Remove Trip</button>
                 </div>
