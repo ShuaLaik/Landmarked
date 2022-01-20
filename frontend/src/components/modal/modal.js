@@ -6,6 +6,7 @@ import EditEntryFormContainer from '../app/body/entry/entry_edit_form_container'
 
 import CreateTripFormContainer from '../app/body/trip/create_trip_form_container'
 import TripEditFormContainer from '../app/body/trip/trip_edit_form_container'
+import EntryShowContainer from '../app/body/entry/entry_show_container';
 
 function Modal(props) {
   const {modal, closeModal} = props;
@@ -25,6 +26,9 @@ function Modal(props) {
       break;
     case 'editTrip':
       component = <TripEditFormContainer/>;
+      break;
+    case 'showEntry':
+      component = <EntryShowContainer />
       break;
     default:
       return null;

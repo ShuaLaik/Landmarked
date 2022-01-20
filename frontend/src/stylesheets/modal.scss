@@ -10,16 +10,16 @@
   }
   
   .modal-child {
-    position: absolute;
-     background-color: rgb(232, 198, 119);   
+    position: absolute; 
     // box-shadow: 1px 1px 1px #DDDEDE, 1px 1px 1em #A4BE5B;
-    border: 10px solid rgb(184, 156, 92);
+    background-image: url('../assets/leather.jpeg');
+    object-fit:contain;
     border-radius: 16px;
     z-index: 600;
-    top: 15vw;
-    left: 50vh;
+    top: 10vw;
+    left: 32vh;
     // transform: translate(-50%, -50%);
-    height: 50vh;
+    height: 65vh;
     width: 50vw;
   }
 
@@ -28,7 +28,8 @@
   // text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
   height: 100%;
   width: 100%;
   form {

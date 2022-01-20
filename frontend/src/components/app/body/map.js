@@ -41,11 +41,10 @@ export default class MapDiv extends Component {
         // google.maps.event.addListenerOnce(map, 'bounds_changed', () => {
         
         this.map.fitBounds(bounds)
-
-        // window.google.maps.event.addListener(this.map, "idle", function() { 
-        debugger
-        if (this.map.getZoom() > 8) {this.map.setZoom(8)}; 
-            // window.google.maps.event.removeListener(listener); 
+        if (this.map.getZoom() > 8 && entrys.length < 2) {this.map.setZoom(8)};
+        // var listener = window.google.maps.event.addListener(this.map, "idle", function() { 
+        //     if (this.map.getZoom() > 16) this.map.setZoom(16); 
+        //     window.google.maps.event.removeListener(listener); 
         //   });
     }
 
