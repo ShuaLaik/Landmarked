@@ -7,6 +7,8 @@ export default class EntryForm extends Component {
         this.state = Object.assign({}, this.props.entry, { photoFile: "" })
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleFile = this.handleFile.bind(this)
+        this.handleFormData = this.handleFormData.bind(this)
+        debugger
     }
 
     handleFile(e){
@@ -35,7 +37,10 @@ export default class EntryForm extends Component {
         formData.append("entry[location][latitude]", state.location.latitude)
         formData.append("entry[photo]", state.photoFile)
         formData.append("entry[user]", state.user)
-        formData.append("entry[trip]", state.trip)
+        debugger
+        if (this.state.trip) {
+            formData.append("entry[trip]", state.trip)
+        }
         return formData;
     }
 
@@ -69,11 +74,9 @@ export default class EntryForm extends Component {
     }
 
     render() {
-        debugger
         return (
             <div className='form-modal-container'>
                 <form onSubmit={this.handleSubmit}>
-
                     <label> 
                         <input  type="text" 
                                 value={this.state.address}  
