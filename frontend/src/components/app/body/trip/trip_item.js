@@ -4,7 +4,8 @@ import EntryItemContainer from '../entry/entry_item_container'
 
 export default class TripItem extends Component {
     constructor(props){
-        super(props)
+        super(props);
+        this.state = {entry: null}
         this.handleClick = this.handleClick.bind(this)
         this.handleDelete = this.handleDelete.bind(this)
     }
@@ -20,10 +21,30 @@ export default class TripItem extends Component {
         deleteTrip(trip._id)
     }
 
+    allowDrop(e) {
+        e.preventDefault();
+    }
+
+    drop(e) {
+        const { updateEntry, fetchEntry } = this.props;
+        e.preventDefault();
+        const data = e.dataTransfer.getData("text");
+        debugger
+        fetchEntry(data)
+            .then(entry => (
+                updateEntry(
+                    Object.assign(entry, { trip: data })
+                )                
+            ));
+    }
+
     render() {
         const {trip} = this.props
         return (
-            <div onClick={this.handleClick} className='trip-container'>
+            <div onClick={this.handleClick} 
+            className='trip-container'
+            onDrop={this.handleDrop} 
+            onDragOver={this.allowDrop}>
                 <h1 className='trip-title'>{trip.title}</h1>
                 <div className='entities-container'>
                     {

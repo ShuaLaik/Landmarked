@@ -19,9 +19,11 @@
     "type": "git",
     "url": "git+https://github.com/ShuaLaik/Landmarked.git"
   },
+  "server": "nodemon app.js --ignore client",
   "keywords": [
     "travel"
   ],
+  
   "author": "Josh, Mack, Izy, Joe",
   "license": "ISC",
   "bugs": {

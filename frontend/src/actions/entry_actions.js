@@ -38,6 +38,13 @@ export const fetchAllUserEntries = (userId) => dispatch => (
     )
 )
 
+export const fetchEntry = (entryId) => dispatch => (
+  EntryAPIUtil.fetchEntry(entryId)
+    .then(entry => dispatch(receiveEntry(entry)), 
+    err => dispatch(receiveEntryErrors(err.responseJSON))
+  )
+)
+
 // NEEDS TO BE REFACTORED AFTER DECIDING FUNCTIONALITY!
 export const fetchAllLocationEntries = (locationId) => dispatch => (
     EntryAPIUtil.fetchAllLocationEntries(locationId)

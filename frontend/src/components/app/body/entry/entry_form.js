@@ -69,7 +69,6 @@ export default class EntryForm extends Component {
     }
 
     render() {
-        debugger
         return (
             <div className='form-modal-container'>
                 <form onSubmit={this.handleSubmit}>

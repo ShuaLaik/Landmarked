@@ -27,7 +27,6 @@ constructor(map){
         // let nonExistent = entrys.filter(entry => !this.markers[entry.id])
         
         // nonExistent.forEach(newEntry => this.createMarkerFromListing(newEntry))
-        debugger
         // entrys.forEach(entry => {
         //   if (entrysObj[entry.id]) {
         //     debugger
@@ -74,10 +73,8 @@ constructor(map){
             entryId: entry._id
             // tripId: entry.trip
         });
-        debugger
         this.markers[marker.entryId] = marker;
         // this.markers.push[marker]
-        debugger
     }
 
     removeMarker(marker) {
