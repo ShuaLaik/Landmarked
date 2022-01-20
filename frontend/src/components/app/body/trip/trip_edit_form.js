@@ -14,7 +14,6 @@ export default class TripEditForm extends Component {
     }
 
     handleSubmit(e) {
-        debugger
         e.preventDefault();
         this.props.updateTrip(this.state)
         this.props.closeModal()

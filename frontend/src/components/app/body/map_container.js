@@ -7,7 +7,6 @@ const mSTP = state => {
         .filter(entry => entry.trip === state.ui.selectedTrip)
 
     // conditional for what entries will be
-    debugger
     if(state.ui.selectedEntry){
         let entries = [state.ui.selectedEntry]
         return ({

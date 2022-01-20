@@ -67,7 +67,6 @@ export default class MapDiv extends Component {
         this.map = new window.google.maps.Map(this.mapNode, mapOptions);
         this.MarkerManager = new MarkerManager(this.map);
         // this.registerListeners();
-        debugger
         if (Object.values(this.props.entries)){
             this.MarkerManager.updateMarkers(Object.values(this.props.entries))
         }

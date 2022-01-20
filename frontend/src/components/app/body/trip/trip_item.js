@@ -9,7 +9,6 @@ export default class TripItem extends Component {
             trip: this.props.trip,
             disabled: true
         }
-        debugger
         this.handleClick = this.handleClick.bind(this)
         this.handleDelete = this.handleDelete.bind(this)
         this.submitNewTripTitle = this.submitNewTripTitle.bind(this)
@@ -41,7 +40,6 @@ export default class TripItem extends Component {
     }
     
     submitNewTripTitle(e) {
-        debugger
         e.preventDefault();
         this.props.updateTrip(this.state.trip)
     }

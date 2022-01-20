@@ -43,7 +43,6 @@ constructor(map){
           scale: 12
         };
 
-        debugger
         const position = new window.google.maps.LatLng(parseFloat(entry.location.latitude), parseFloat(entry.location.longitude));
         // const position = ({lat: parseFloat(entry.location.latitude), lng: parseFloat(entry.location.longitude)});
         const marker = new window.google.maps.Marker({

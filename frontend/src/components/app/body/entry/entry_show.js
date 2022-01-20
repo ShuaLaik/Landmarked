@@ -6,7 +6,6 @@ export default class EntryShow extends Component {
         this.state = this.props.entry
     }
     render() {
-        debugger
         return (
             <form className="show-container">
                 <ul>
