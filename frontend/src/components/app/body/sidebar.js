@@ -17,7 +17,7 @@ export default class Sidebar extends Component {
         // if(!this.props.combinedTripsEntries) {
         //     return (null)
         // }
-        debugger
+        
         return (
             <div>
                 <div className='entity-index-container'>
