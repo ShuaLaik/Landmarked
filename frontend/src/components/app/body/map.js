@@ -26,9 +26,7 @@ export default class MapDiv extends Component {
             latitudes.push(parseFloat(entrys[i].location.latitude))
             longitudes.push(parseFloat(entrys[i].location.longitude))
         }
-        debugger
         coordinates = [Math.min(...latitudes), Math.min(...longitudes), Math.max(...latitudes), Math.max(...longitudes)]        
-        debugger
         return coordinates;
     }   // 0 and 1 are lat and long respecitvely for southwest, 2 and 3 are lat and long for north east
 
@@ -38,7 +36,6 @@ export default class MapDiv extends Component {
             new window.google.maps.LatLng(coordinates[0], coordinates[1]), //southwest
             new window.google.maps.LatLng(coordinates[2], coordinates[3]) //northeast
         ); 
-        debugger
         // google.maps.event.addListenerOnce(map, 'bounds_changed', () => {
         this.map.fitBounds(bounds)
 

@@ -2,8 +2,10 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import EntryFormContainer from '../app/body/entry/entry_form_container';
-import EditFormContainer from '../app/body/entry/edit_form_container';
+import EditEntryFormContainer from '../app/body/entry/entry_edit_form_container';
+
 import CreateTripFormContainer from '../app/body/trip/create_trip_form_container'
+import TripEditFormContainer from '../app/body/trip/trip_edit_form_container'
 
 function Modal(props) {
   const {modal, closeModal} = props;
@@ -16,10 +18,13 @@ function Modal(props) {
       component = <EntryFormContainer/>;
       break;
     case 'editEntry':
-      component = <EditFormContainer/>;
+      component = <EditEntryFormContainer/>;
       break;
     case 'createTrip':
       component = <CreateTripFormContainer/>;
+      break;
+    case 'editTrip':
+      component = <TripEditFormContainer/>;
       break;
     default:
       return null;

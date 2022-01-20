@@ -8,7 +8,6 @@ export default class EntryForm extends Component {
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleFile = this.handleFile.bind(this)
         this.handleFormData = this.handleFormData.bind(this)
-        debugger
     }
 
     handleFile(e){
@@ -37,7 +36,6 @@ export default class EntryForm extends Component {
         formData.append("entry[location][latitude]", state.location.latitude)
         formData.append("entry[photo]", state.photoFile)
         formData.append("entry[user]", state.user)
-        debugger
         if (this.state.trip) {
             formData.append("entry[trip]", state.trip)
         }
