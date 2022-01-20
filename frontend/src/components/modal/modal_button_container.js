@@ -10,9 +10,9 @@ class ModalButton extends React.Component {
         this.handleClick = this.handleClick.bind(this)
     }
     handleClick () {
-        if (this.props.action === 'editEntry') {
-            this.props.receiveEditEntryObject(this.props.entry)
-        } 
+        // if (this.props.action === 'editEntry') {
+        //     this.props.receiveEditEntryObject(this.props.entry)
+        // } 
         this.props.openModal(this.props.action)
     }
 

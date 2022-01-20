@@ -2,14 +2,21 @@ import React, { Component } from 'react'
 import ModalButtonContainer from '../../../modal/modal_button_container';
 
 export default class EntryItem extends Component {
+    constructor(props){
+        super(props)
+        this.handleClick = this.handleClick.bind(this)
+    }
     componentDidMount() {
  
+    }
+    handleClick(){
+        this.props.receiveEditEntryObject(this.props.entry)
     }
 
     render() {
         const {entry_photo_url, message} = this.props.entry
         return (
-            <div className='trip-entry-item-container'>
+            <div className='trip-entry-item-container' onClick={this.handleClick}>
                 <img src={entry_photo_url} className="entry-image" alt="Entry"/>
                 <h1 className='entry-message'>{message}</h1>
                 <div>

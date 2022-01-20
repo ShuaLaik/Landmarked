@@ -7,7 +7,7 @@ import EntryEditForm from "./entry_edit_form"
 const mSTP = (state, ownProps) => {
     debugger
     return ({
-        entry: state.ui.edit   
+        entry: state.ui.selectedEntry  
     })
 }
 const mDTP = dispatch => ({

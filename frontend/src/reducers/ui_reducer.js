@@ -6,7 +6,7 @@ import mapReducer from './map_reducer';
 
 const uiReducer = combineReducers({
   modal: modalReducer,
-  edit: editsReducer,
+  selectedEntry: editsReducer,
   selectedTrip: mapReducer
 });
 
