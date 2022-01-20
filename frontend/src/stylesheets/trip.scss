@@ -41,9 +41,11 @@
 .trip-container > .trip-entry-item-container:hover{
     display: flex;
     background-color: #A4BE5B;
+    cursor: pointer;
     
 }
 .trip-container:hover{
+    cursor: pointer;
     transition-duration: 1s;
     // height: 100px;
     width: 100%;
@@ -63,6 +65,7 @@
         flex-direction: row;
     }
     .trip-entry-item-container{
+        cursor: pointer;
     transition-duration: 1s;
     height: 40px;
     z-index: 1;
