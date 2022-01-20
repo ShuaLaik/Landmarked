@@ -20,6 +20,6 @@ const mSTP = (state, ownProps) => ({
 })
 const mDTP = dispatch => ({
     action: entry => dispatch(createEntry(entry)),
-    closeModal: () => dispatch(closeModal)
+    closeModal: () => dispatch(closeModal())
 })
 export default connect(mSTP, mDTP)(EntryForm)

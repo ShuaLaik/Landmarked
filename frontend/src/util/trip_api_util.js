@@ -5,6 +5,7 @@ export const fetchAllUserTrips = userId => {
 };
 
 export const createTrip = trip => {
+  debugger
   return axios.post('/api/trips/', trip)
 };
 

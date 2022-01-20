@@ -3,6 +3,7 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import EntryFormContainer from '../app/body/entry/entry_form_container';
 import EditFormContainer from '../app/body/entry/edit_form_container';
+import CreateTripFormContainer from '../app/body/trip/create_trip_form_container'
 
 function Modal(props) {
   const {modal, closeModal} = props;
@@ -16,6 +17,9 @@ function Modal(props) {
       break;
     case 'editEntry':
       component = <EditFormContainer/>;
+      break;
+    case 'createTrip':
+      component = <CreateTripFormContainer/>;
       break;
     default:
       return null;

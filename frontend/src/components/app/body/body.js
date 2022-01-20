@@ -8,6 +8,7 @@ export default class Body extends Component {
         fetchAllUserEntries(user.id);
         fetchAllUserTrips(user.id);
     }
+    
     render() {
         if (Object.values(this.props.entries).length > 0){
             return (

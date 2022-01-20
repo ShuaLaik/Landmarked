@@ -25,7 +25,8 @@ const EntrySchema = new Schema({
     },
     trip: {
         type: Schema.Types.ObjectId,
-        ref: Trip
+        ref: Trip,
+        default: null
     },
     type: {
         type: String,
@@ -34,7 +35,7 @@ const EntrySchema = new Schema({
     location_id: String, // this is placeholder if/when we identify location with one number, until 
     // then we will use lat/long
     user: {
-        type: Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId, 
         ref: User
     }
 }, {
@@ -43,3 +44,9 @@ const EntrySchema = new Schema({
 
 module.exports = Entry = mongoose.model('Entry', EntrySchema);
 
+
+// var userSchema = new mongoose.Schema({
+//     name: {type: String, required: true},
+//     preferences: {type : { preference1 : String, preference2 : String}, default : null}
+//   });
+  

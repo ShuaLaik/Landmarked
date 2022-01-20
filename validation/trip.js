@@ -4,19 +4,12 @@ const validText = require('./valid-text');
 module.exports = function validateTripInput(data) {
     let errors = {};
 
-    data.username = validText(data.user) ? data.user : '';
-    data.password = validText(data.name) ? data.name : '';
-  
-    if (Validator.isEmpty(data.name)) {
-      errors.entry_photo_url = 'A name is required';
+    if (Validator.isEmpty(data.title)) {
+      errors.entry_photo_url = 'A title is required';
     }
   
     if (Validator.isEmpty(data.user)) {
       errors.message = 'User info is empty';
-    }
-
-    if (Validator.isEmpty(data.type)) {
-      errors.message = 'Type is empty';
     }
 
     return {
