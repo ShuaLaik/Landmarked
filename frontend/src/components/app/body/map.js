@@ -5,9 +5,9 @@ import Style from "./styles"
 export default class MapDiv extends Component {
 
     componentDidUpdate(prevProps){
-        debugger
         if (Object.values(this.props.tripEntries).length > 0){ //selected trips
             this.MarkerManager.updateMarkers(Object.values(this.props.tripEntries), true)
+            // check for if selected trip entry
             this.changeZoom(Object.values(this.props.tripEntries))
         } else { //all entries
             this.MarkerManager.updateMarkers(Object.values(this.props.entries), false)
@@ -68,7 +68,7 @@ export default class MapDiv extends Component {
         this.map = new window.google.maps.Map(this.mapNode, mapOptions);
         this.MarkerManager = new MarkerManager(this.map);
         // this.registerListeners();
-        
+        debugger
         if (Object.values(this.props.entries)){
             this.MarkerManager.updateMarkers(Object.values(this.props.entries))
         }

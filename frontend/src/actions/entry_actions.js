@@ -1,13 +1,13 @@
 import * as EntryAPIUtil from '../util/entry_api_util';
-
 export const RECEIVE_ENTRIES = "RECEIVE_ENTRIES";
 export const RECEIVE_ENTRY = "RECEIVE_ENTRY";
 export const REMOVE_ENTRY = "REMOVE_ENTRY";
 export const RECEIVE_ENTRY_ERRORS = "RECEIVE_ENTRY_ERRORS";
+
 export const RECEIVE_EDIT_ENTRY_OBJ = "RECEIVE_EDIT_ENTRY_OBJ";
+export const RESET_ENTRY_OBJ = "RESET_ENTRY_OBJ";
 
 export const receiveEntries = entries => {
-  debugger
   return { type: RECEIVE_ENTRIES,
            entries
   }
@@ -31,6 +31,10 @@ const receiveEntryErrors = (errors) => ({
 export const receiveEditEntryObject = (entry) => ({
   type: RECEIVE_EDIT_ENTRY_OBJ,
   entry
+})
+
+export const resetEntryObject = () => ({
+  type: RESET_ENTRY_OBJ
 })
 
 export const fetchAllUserEntries = (userId) => dispatch => (

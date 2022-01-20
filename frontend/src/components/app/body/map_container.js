@@ -5,10 +5,22 @@ import MapDiv from "./map"
 const mSTP = state => {
     let tripEntries = Object.values(state.entities.entries)
         .filter(entry => entry.trip === state.ui.selectedTrip)
-    
-    return ({
-        tripEntries: tripEntries
-    })
+
+    // conditional for what entries will be
+    debugger
+    if(state.ui.selectedEntry){
+        let entries = [state.ui.selectedEntry]
+        return ({
+            tripEntries: tripEntries,
+            entries: entries
+        })
+} else {
+        let entries = Object.values(state.entities.entries)
+        return ({
+            tripEntries: tripEntries,
+            entries: entries
+        })
+    }
 }
 
 export default connect(mSTP)(MapDiv)

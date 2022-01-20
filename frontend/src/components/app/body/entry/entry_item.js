@@ -10,6 +10,9 @@ export default class EntryItem extends Component {
  
     }
     handleClick(){
+        if(!this.props.entry.trip) {
+            this.props.resetTripId()
+        }
         this.props.receiveEditEntryObject(this.props.entry)
     }
 

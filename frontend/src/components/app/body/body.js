@@ -15,7 +15,8 @@ export default class Body extends Component {
             return (
                 <div id="body-container">
                     {/* <MapDiv entries={this.props.entries}/> */}
-                    <MapContainer entries={this.props.entries}/>
+                    {/* <MapContainer entries={this.props.entries}/> */}
+                    <MapContainer />
                     <SidebarContainer user={this.props.user}/>
                 </div>
             )
