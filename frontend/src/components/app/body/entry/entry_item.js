@@ -14,7 +14,7 @@ export default class EntryItem extends Component {
             this.props.resetTripId()
         }
         this.props.receiveEditEntryObject(this.props.entry)
-        this.props.openModal("showEntry")
+        setTimeout(() => this.props.openModal("showEntry"), 1500);
     }
 
     render() {
