@@ -11,8 +11,8 @@ An online travel journal to track all the great places you visit and all the tri
 showing off their experience at the location.
 - Trips - users can save multiple entries under a trip. 
 - Dynamic map 
--- Entries are saved to a location on the map when they are created. By default the user profile page displays a merker for each entry on the map.
--- When a trip is selected the travel path is plotted on the map
+  - Entries are saved to a location on the map when they are created. By default the user profile page displays a merker for each entry on the map.
+  - When a trip is selected the travel path is plotted on the map
 
 
 ## Technologies, Libraries, and APIs
