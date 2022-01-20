@@ -2,6 +2,7 @@ import { RECEIVE_TRIPS,
     RECEIVE_TRIP,
     REMOVE_TRIP } from '../actions/trip_actions';
 
+
 const tripsReducer = (prevState = {}, action) => {
 
 Object.freeze(prevState);
@@ -16,7 +17,7 @@ switch(action.type) {
     newState[action.trip.data._id] = action.trip.data; 
     return newState;
   case REMOVE_TRIP:
-    delete newState[action.tripId]
+    delete newState[action.tripId]; 
     return newState;
   default:
     return prevState;

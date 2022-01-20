@@ -48,9 +48,7 @@
         display: none;
     }
 }
-    .entities-container{
-        
-    }
+
 .trip-container:focus + .entities-container{
     transition-duration: 1s;
     display: flex;

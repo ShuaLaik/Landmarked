@@ -62,8 +62,24 @@ router.delete('/:trip_id', (req, res) => { // given TRIP ID, deletes trip,
     // does not return deleted object, returns delete confirmation
     Trip
     .deleteOne({_id: req.params.trip_id})
-    .then(trip => res.json(trip))
     .catch(err => res.status(404).json({ notripfound: 'no trips found' }))
+
+    const entriesArr = [];
+
+    // Entry.updateMany({trip: req.params.trip_id}, {$set: {trip: undefined}} )
+
+    Entry
+     .find({trip: req.params.trip_id})
+     .then(entries => {
+         Object.values(entries).forEach( entry => {
+             delete entry.trip
+             entry.update(entry)
+             entriesArr.push(entry)                        
+         })
+        return entriesArr
+    })
+    .then(entries => res.json(entries))
+    .catch(err => res.status(404).json({ noentriesfound: 'no trip found from this trip ID'}))
 });
 
 module.exports = router;

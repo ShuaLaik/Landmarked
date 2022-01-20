@@ -6,10 +6,12 @@ export const REMOVE_ENTRY = "REMOVE_ENTRY";
 export const RECEIVE_ENTRY_ERRORS = "RECEIVE_ENTRY_ERRORS";
 export const RECEIVE_EDIT_ENTRY_OBJ = "RECEIVE_EDIT_ENTRY_OBJ";
 
-const receiveEntries = entries => ({
-  type: RECEIVE_ENTRIES,
-  entries
-});
+export const receiveEntries = entries => {
+  debugger
+  return { type: RECEIVE_ENTRIES,
+           entries
+  }
+}
 
 const receiveEntry = entry => ({
   type: RECEIVE_ENTRY,
