@@ -7,7 +7,8 @@ const mSTP = (state, ownProps) => {
     let tripEntries = Object.values(state.entities.entries)
         .filter(entry => entry.trip === ownProps.trip._id)
     return ({
-        tripEntries: tripEntries
+        tripEntries: tripEntries,
+        currentTrip: state.ui.selectedTrip
     })
 }
 

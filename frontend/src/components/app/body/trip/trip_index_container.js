@@ -11,7 +11,8 @@ const mSTP = state => {
             ),  
         ),
         userId,
-        type: 'trip'
+        type: 'trip',
+        currentTrip: state.ui.selectedTrip
     }
 }
 

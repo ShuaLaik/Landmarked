@@ -13,7 +13,7 @@
     .single-entry-item-container{
         background-color: rgb(207, 177, 105);
         height: 40px;
-        // width: 18vw;
+        width: 100%;
        border-bottom: 2px solid rgb(184, 156, 92);
         display:flex;
         flex-direction: row;
@@ -28,16 +28,19 @@
             white-space: nowrap;
             text-overflow: ellipsis;
         }
-        button {
+          button{
             display: none;
-        width: 46%;
-        height: 40%;
+            width: 45%;
+        height: 43%;
         margin: 2%;
         background-color: #9cb459;
-        color: #DDDEDE;
-        border-radius: 7px;
-        // border: 1px solid white;
-        font-size: 20px;
+        color: white;
+        border-radius: 3px;
+        border: 1px solid white;
+        font-size: 15px;
+        text-justify: inter-cluster;
+        text-align: center;
+        text-indent: center;
         }
         .div{
             transition-duration: .5s;
@@ -65,13 +68,18 @@
         button{
             display: flex;
             transition-duration: .5s;
+            flex-direction: row;
         }
-        .trip-entry-item-container{
-            
-        transition-duration: .5s;
-        display:flex;
-        flex-direction: row;
-        justify-content: space-between;
+        .trip-entry-item-container{   
+            width: 100%; 
+            transition-duration: .5s;
+            display:flex;
+            flex-direction: column;
+            justify-content: space-between;
+            div{
+                display: flex;
+                flex-direction: row;
+            }
         }
     }
 }
