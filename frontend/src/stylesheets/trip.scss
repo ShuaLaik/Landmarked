@@ -1,3 +1,75 @@
 .trip-container{
-    background: darkgrey
+    background-color: rgb(147, 170, 85);
+    transition-duration: .5s;
+    border-bottom: 2px solid rgb(122, 141, 70);
+    h1{
+        transition-duration: .5s;
+        padding: 10px;
+        font-size: 25px;
+        width: 30%;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-weight: 300;
+    }
+        button{
+            display: none;
+            width: 38%;
+        height: 43%;
+        margin: 2%;
+        background-color: #9cb459;
+        color: white;
+        border-radius: 3px;
+        border: 1px solid white;
+        font-size: 15px;
+        text-justify: inter-cluster;
+        text-align: center;
+        text-indent: center;
+        }
+    .trip-entry-item-container{
+        display: none;
+        height:0px;
+    }
+}
+    .entities-container{
+        
+    }
+.trip-container:hover + .entities-container{
+    transition-duration: 1s;
+    display: flex;
+
+}
+.trip-container > .trip-entry-item-container:hover{
+    display: flex;
+    background-color: #A4BE5B;
+    
+}
+.trip-container:hover{
+    transition-duration: 1s;
+    // height: 100px;
+    width: 100%;
+    border-bottom: 1px solid rgb(83, 83, 83);
+    background-color: #A4BE5B;
+    h1{
+        transition-duration: .5s;
+        font-size: 30px;
+        width: inherit;
+    }
+    button{
+        display: flex;
+        transition-duration: .5s;
+    }
+    #trip-buttons{
+        display: flex;
+        flex-direction: row;
+    }
+    .trip-entry-item-container{
+    transition-duration: 1s;
+    height: 40px;
+    z-index: 1;
+    background-color: #A4BE5B;
+    transition-duration: 2s;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    }
 }

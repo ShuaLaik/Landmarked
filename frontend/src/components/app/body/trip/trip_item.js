@@ -29,16 +29,18 @@ export default class TripItem extends Component {
                     {
                         this.props.tripEntries.map(tripEntry => {
                             return (
-                            <div className='trip-entry-item-container'>
+                            // <div className='trip-entry-item-container'>
                                 <EntryItemContainer entry={tripEntry}/>
-                            </div>
+                            // </div>
                             )}
                     )
                     }
                 </div>
-                    <ModalButtonContainer trip={trip} action={"editTrip"} buttonTitle={"Edit"}/>
-                    <ModalButtonContainer trip={trip} action={"createEntry"} buttonTitle={"Create Trip Entry"}/>
-                <button onClick={this.handleDelete}>Remove Trip</button>
+                <div id="trip-buttons">
+                    <ModalButtonContainer trip={trip} action={"editTrip"} buttonTitle={"Edit Trip"}/>
+                    <ModalButtonContainer trip={trip} action={"createEntry"} buttonTitle={"Add Entry"}/>
+                    <button onClick={this.handleDelete}>Remove Trip</button>
+                </div>
             </div>
         )
     }

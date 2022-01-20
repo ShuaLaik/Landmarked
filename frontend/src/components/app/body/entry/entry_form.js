@@ -73,27 +73,30 @@ export default class EntryForm extends Component {
         return (
             <div className='form_modal_container'>
                 <form onSubmit={this.handleSubmit}>
-                    <label> File Upload
-                        <input type="file" name="photo" onChange={this.handleFile}/> 
-                    </label>
-                    <label> Address
+
+                    <label> 
                         <input  type="text" 
                                 value={this.state.address}  
-                                onChange={this.update("address")} />
+                                onChange={this.update("address")} 
+                                placeholder="Address"/>
                     </label>
                     <br></br>
-                    <label> Title
+                    <label> 
                         <input  
                                 type="text" 
                                 value={this.state.title} 
-                                onChange={this.update("title")} />
+                                onChange={this.update("title")} 
+                                placeholder="Title"/>
                     </label>
                     <br></br>
-                    <label> Message
-                        <input  
-                                type="text" 
+                    <label> 
+                        <textarea  
                                 value={this.state.message} 
-                                onChange={this.update("message")} />
+                                onChange={this.update("message")}
+                                placeholder="Message" />
+                    </label>
+                     <label> 
+                        <input type="file" name="photo" onChange={this.handleFile}/> 
                     </label>
                     <br></br>
                     <button>Submit</button>

@@ -4,22 +4,27 @@
     bottom: 0;
     right: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 10;
+    background: #2B3032;
+    z-index: 600;
+    opacity: .5;
   }
   
   .modal-child {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 25vh;
-    width: 25vw;
+     background-color: rgb(232, 198, 119);   
+    // box-shadow: 1px 1px 1px #DDDEDE, 1px 1px 1em #A4BE5B;
+    border: 10px solid rgb(184, 156, 92);
+    border-radius: 16px;
+    z-index: 600;
+    top: 15vw;
+    left: 50vh;
+    // transform: translate(-50%, -50%);
+    height: 50vh;
+    width: 50vw;
   }
 
 .form_modal_container {
-  background-color: gray;
-  border: 1px solid black;
+  padding: 10px;
   // text-align: center;
   display: flex;
   flex-direction: column;
@@ -29,4 +34,23 @@
   form {
     height: 100%;
   }
+      input[type=text]{
+        width: 224px;
+        height: 38px;
+        border-radius: 8px;
+        border: 3px solid #809448;
+        background-color: #d1dbb6;
+        text-indent: 10px;
+      }
+      textarea{
+        width: 224px;
+        height: 38px;
+        border-radius: 8px;
+        border: 3px solid #809448;
+        background-color: #d1dbb6;
+        text-indent: 10px;
+      }
+      
+      
+
 }

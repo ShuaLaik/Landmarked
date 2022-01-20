@@ -9,11 +9,13 @@ export default class EntryItem extends Component {
     render() {
         const {entry_photo_url, message} = this.props.entry
         return (
-            <div>
+            <div className='trip-entry-item-container'>
                 <img src={entry_photo_url} className="entry-image" alt="Entry"/>
                 <h1 className='entry-message'>{message}</h1>
+                <div>
                     <ModalButtonContainer entry={this.props.entry} action={"editEntry"} buttonTitle={"Edit"}/>
-                <button onClick={() => this.props.deleteEntry(this.props.entry._id)}>Remove Entry</button>
+                    <button onClick={() => this.props.deleteEntry(this.props.entry._id)}>Remove Entry</button>
+                </div>
             </div>
         )
     }
