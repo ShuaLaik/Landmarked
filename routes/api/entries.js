@@ -46,9 +46,9 @@ router.patch('/:entry_id', (req, res) => {
         return res.status(400).json(errors);
     }
     
-    Entry.findByIdAndUpdate(req.params.entry_id, req.body)
-    .then(entry => res.json(entry))
-    .catch(err => res.status(404).json({ noentryfound: 'no entry found from this entry ID' }
+    Entry.findByIdAndUpdate(req.params.entry_id, req.body, {new: true})
+        .then(entry => res.json(entry))
+        .catch(err => res.status(404).json({ noentryfound: 'no entry found from this entry ID' }
     )
     );
     
