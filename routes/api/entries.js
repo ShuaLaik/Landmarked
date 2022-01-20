@@ -66,9 +66,9 @@ router.patch('/:entry_id', (req, res) => {
 router.delete('/:entry_id', (req, res) => { // given ENTRY ID, deletes entry,
     // does not return deleted object, returns delete confirmation
     Entry
-    .deleteOne({_id: req.params.entry_id})
-    .then(entry => res.json(entry))
-    .catch(err => res.status(404).json({ noentryfound: 'no entries found' }))
+        .deleteOne({_id: req.params.entry_id})
+        .then(entry => res.json(entry))
+        .catch(err => res.status(404).json({ noentryfound: 'no entries found' }))
 });
 
 // AWS START

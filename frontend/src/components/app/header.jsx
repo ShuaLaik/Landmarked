@@ -15,6 +15,7 @@ export default class Header extends Component {
                         />
                     </form>
                     <h2>⚙️</h2>
+                    <button onClick={() => this.props.resetTripId()}/>
                     <button onClick={() => this.props.logout()}>Logout</button>
                 </div>
             </div>

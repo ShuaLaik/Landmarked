@@ -4,19 +4,24 @@ export default class MarkerManager {
 constructor(map){
       this.map = map;
       this.markers = {};
-      // this.markers = [];
       this.coords = [];
+      this.state = {};
+      this.polylines = [];
+      this.lineSymbol = {
+        path: "M 0,-1 0,1",
+        strokeOpacity: 1,
+        scale: 4,
+      };
     }
   
     updateMarkers(entrys, isTrip){
-
-      // Object.keys(this.markers).forEach(marker => {
-      //     this.removeMarker(marker)   
-      // })
-        // this.markers = {};
-        Object.keys(this.markers).forEach(markerId => this.markers[markerId].setMap(null));
+      this.coords = [];
       
+      for (let i = 0; i < this.polylines.length; i++){                           
+          this.polylines[i].setMap(null); //or line[i].setVisible(false);
+      }
 
+<<<<<<< HEAD
        
         
         // const entrysObj = {};
@@ -48,20 +53,16 @@ constructor(map){
 
         // let clearCurrent = Object.keys(this.markers).filter(entryId => entrysObj[entryId])
         // clearCurrent.forEach((currentId) => this.removeMarker(this.markers[currentId]))
+=======
+      Object.keys(this.markers).forEach(markerId => this.markers[markerId].setMap(null));
+>>>>>>> main
 
-        
+      entrys.forEach(allowedEntry => this.createMarkerFromListing(allowedEntry))
 
-        Object.values(entrys).forEach(entry => this.coords.push({
-            lat: parseFloat(entry.location.latitude),
-            lng: parseFloat(entry.location.longitude)
-            })
-        )
-        
-        // isTrip ? this.addPolyLine() : null;
-        // this.addPolyLine();
-        // if (isTrip) {
-        //   this.addPolyLine(); 
-        // }; 
+     
+        if (isTrip) {
+          this.addPolyLine(entrys); // added argument here 
+        }; 
     };
 
     createMarkerFromListing(entry) {
@@ -77,20 +78,22 @@ constructor(map){
         // this.markers.push[marker]
     }
 
-    removeMarker(marker) {
-      this.markers[marker.entryId].setMap(null);
-      delete this.markers[marker.entryId];
-    }
+    // removeMarker(marker) {
+    //   this.markers[marker.entryId].setMap(null);
+    //   delete this.markers[marker.entryId];
+    // }
 
-
-
-    addPolyLine() {
-
-        const lineSymbol = {
-            path: "M 0,-1 0,1",
-            strokeOpacity: 1,
-            scale: 4,
-        };
+    addPolyLine(entrys) {
+        Object.values(entrys).forEach(entry => this.coords.push({
+            lat: parseFloat(entry.location.latitude),
+            lng: parseFloat(entry.location.longitude)
+            })
+        )
+        // const lineSymbol = {
+        //     path: "M 0,-1 0,1",
+        //     strokeOpacity: 1,
+        //     scale: 4,
+        // };
 
         var line = new window.google.maps.Polyline({
           path: this.coords,
@@ -101,14 +104,16 @@ constructor(map){
         //   strokeWeight: 2
           icons: [
             {
-              icon: lineSymbol,
+              icon: this.lineSymbol,
               offset: "0",
               repeat: "20px",
             },
           ],
         });
-  
+
         line.setMap(this.map)
+
+        this.polylines.push(line)
     }
 }
   

@@ -4,6 +4,7 @@ import EntryForm from "./entry_form"
 
 
 const mSTP = (state, ownProps) => {
+    debugger
     return ({
         entry: state.ui.edit   
     })
