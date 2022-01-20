@@ -10,10 +10,12 @@ const receiveTrips = trips => ({
   trips
 });
 
-const receiveTrip = trip => ({
-  type: RECEIVE_TRIP,
-  trip
-});
+const receiveTrip = trip => {
+  return ({
+    type: RECEIVE_TRIP,
+    trip
+  })
+};
 
 const removeTrip = tripId => ({
   type: REMOVE_TRIP,
@@ -34,8 +36,8 @@ export const fetchAllUserTrips = (userId) => dispatch => (
   
 export const createTrip = (trip) => dispatch => (
     TripAPIUtil.createTrip(trip)
-        .then(trip => dispatch(receiveTrip(trip)), 
-        err => dispatch(receiveTripErrors(err.responseJSON))
+        .then(trip => dispatch(receiveTrip(trip)) //, 
+        // err => dispatch(receiveTripErrors(err.responseJSON))
     )
 );
 

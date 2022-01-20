@@ -18,10 +18,10 @@ export default class Sidebar extends Component {
                 <div className='main-index-container'>
                     {this.props.combinedTripsEntries.map(entity => {
                         if (entity.type === 'trip'){
-                            return <TripItemContainer trip={entity}/>
+                            return <TripItemContainer key={entity._id} trip={entity}/>
                         } else if (entity.type === 'entry'){
                             return (
-                            <div className='single-entry-item-container'>
+                            <div key={entity._id} className='single-entry-item-container'>
                                 <EntryItemContainer entry={entity}/>
                             </div>
                             )

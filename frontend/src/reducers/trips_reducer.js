@@ -3,14 +3,18 @@ import { RECEIVE_TRIPS,
     REMOVE_TRIP } from '../actions/trip_actions';
 
 const tripsReducer = (prevState = {}, action) => {
+
 Object.freeze(prevState);
+
 let newState = Object.assign({}, prevState);
+
 switch(action.type) {
   case RECEIVE_TRIPS:
-    action.trips.data.forEach(trip => newState[trip._id] = trip) // data?
+    action.trips.data.forEach(trip => newState[trip._id] = trip) 
     return newState;
   case RECEIVE_TRIP:
-    return newState[action.trip.data._id] = action.trip.data; // data?
+    newState[action.trip.data._id] = action.trip.data; 
+    return newState;
   case REMOVE_TRIP:
     delete newState[action.tripId]
     return newState;

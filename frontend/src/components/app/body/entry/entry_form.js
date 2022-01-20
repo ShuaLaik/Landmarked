@@ -64,14 +64,14 @@ export default class EntryForm extends Component {
                 const newState = Object.assign({}, this.state, stateCopy)
                 delete newState.address
                 this.props.action(this.handleFormData(newState))
-            })
-        this.props.closeModal()
-        let formatted_address, newLatitude, newLongitude
+            }).then(this.props.closeModal())
+            let formatted_address, newLatitude, newLongitude
     }
 
     render() {
+        debugger
         return (
-            <div className='form_modal_container'>
+            <div className='form-modal-container'>
                 <form onSubmit={this.handleSubmit}>
 
                     <label> 

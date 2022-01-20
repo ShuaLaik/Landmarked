@@ -27,11 +27,7 @@ module.exports = function validateEntryInput(data) {
     if (Validator.isEmpty(data.user)) {
       errors.user = 'user field is required';
     }
-
-    if (Validator.isEmpty(data.type)) {
-      errors.message = 'Type is empty';
-    }
-  
+    
     return {
       errors,
       isValid: Object.keys(errors).length === 0

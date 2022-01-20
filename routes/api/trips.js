@@ -20,29 +20,28 @@ router.get(`/:trip_id`, (req, res) => { // given user ID in params, returns all 
     }
     
     User.findOne({ _id: req.body.trip_id })
-    .then(trip => res.json(trip))
-    .catch(err => res.status(404).json({ notripsfound: 'no trips found for this id' }
+        .then(trip => res.json(trip))
+        .catch(err => res.status(404).json({ notripsfound: 'no trips found for this id' }
     )
     );
 });
 
 
-router.post(`/`, (req, res) => { // given user ID in params, returns all user's entries
-
+router.post(`/`, (req, res) => { 
     const { errors, isValid } = validateTripInput(req.body);
+    
     if (!isValid) {
       return res.status(400).json(errors);
     }
-
     const newTrip = new Trip({
         title: req.body.title,
         user: req.body.user,
         type: 'trip'
     });
     newTrip.save()
-    .then(trip => res.json(trip))
-    .catch(err => res.status(404).json({ invalidtrip: 'trip is invalid' }))
-});
+        .then(trip => res.json(trip))
+        .catch(err => res.status(404).json({ invalidtrip: 'trip is invalid' }))
+    });
 
 router.patch('/:trip_id', (req, res) => {
     const { errors, isValid } = validateTripInput(req.body);
