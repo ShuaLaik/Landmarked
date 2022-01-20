@@ -55,9 +55,9 @@ export default class MapDiv extends Component {
     componentDidMount() {
         const mapOptions = {
             // center: { lat: 37.7758, lng: -122.435 }, // this is SF
-            center: { lat: 0, lng: 0 }, // this is SF
+            center: { lat: 0, lng: 0 }, // center of the map
             // zoom: 2,
-            zoom: 1,
+            zoom: 5,
             streetViewControl: false,
             addressControl: false,
             panControl: false,

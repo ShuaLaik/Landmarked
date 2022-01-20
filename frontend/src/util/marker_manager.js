@@ -23,7 +23,7 @@ constructor(map){
 
       Object.keys(this.markers).forEach(markerId => this.markers[markerId].setMap(null));
 
-      entrys.forEach(allowedEntry => this.createMarkerFromListing(allowedEntry))
+      entrys.forEach((allowedEntry, idx) => this.createMarkerFromListing(allowedEntry, idx))
 
      
         if (isTrip) {
@@ -31,13 +31,28 @@ constructor(map){
         }; 
     };
 
-    createMarkerFromListing(entry) {
+    createMarkerFromListing(entry, idx) {
+
+        var mIcon = {
+          // path: window.google.maps.SymbolPath.CIRCLE,
+          fillOpacity: 0.1,
+          fillColor: '#FF0000',
+          strokeOpacity: 1,
+          strokeWeight: 1,
+          strokeColor: '#333',
+          scale: 12
+        };
+
+        debugger
         const position = new window.google.maps.LatLng(parseFloat(entry.location.latitude), parseFloat(entry.location.longitude));
         // const position = ({lat: parseFloat(entry.location.latitude), lng: parseFloat(entry.location.longitude)});
         const marker = new window.google.maps.Marker({
             position,
             map: this.map,
-            entryId: entry._id
+            entryId: entry._id,
+            title: (idx + 1).toString(),
+            icon: mIcon,
+            label: {color: '#FFFFFF', fontSize: '12px', fontWeight: '600', text: (idx + 1).toString()}
             // tripId: entry.trip
         });
         this.markers[marker.entryId] = marker;
