@@ -7,7 +7,9 @@ export default class TripItem extends Component {
         super(props);
         this.state = {entry: null}
         this.handleClick = this.handleClick.bind(this)
-        this.handleDelete = this.handleDelete.bind(this)
+        this.handleDelete = this.handleDelete.bind(this);
+        this.drop = this.drop.bind(this)
+        this.allowDrop = this.allowDrop.bind(this)
     }
 
     handleClick () {
@@ -43,7 +45,7 @@ export default class TripItem extends Component {
         return (
             <div onClick={this.handleClick} 
             className='trip-container'
-            onDrop={this.handleDrop} 
+            onDrop={this.drop} 
             onDragOver={this.allowDrop}>
                 <h1 className='trip-title'>{trip.title}</h1>
                 <div className='entities-container'>
