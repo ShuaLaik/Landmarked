@@ -5,12 +5,14 @@ import Style from "./styles"
 export default class MapDiv extends Component {
 
     componentDidUpdate(prevProps){
+        debugger
         if (Object.values(this.props.tripEntries).length > 0){ //selected trips
             this.MarkerManager.updateMarkers(Object.values(this.props.tripEntries), true)
             this.changeZoom(Object.values(this.props.tripEntries))
         } else { //all entries
             this.MarkerManager.updateMarkers(Object.values(this.props.entries), false)
             this.changeZoom(Object.values(this.props.entries))
+            // this.map.setZoom(24);
             // changeZoom(this.props.tripEntries)
         }
     }
@@ -37,18 +39,22 @@ export default class MapDiv extends Component {
             new window.google.maps.LatLng(coordinates[2], coordinates[3]) //northeast
         ); 
         // google.maps.event.addListenerOnce(map, 'bounds_changed', () => {
+        
         this.map.fitBounds(bounds)
 
-        // var listener = window.google.maps.event.addListener(this.map, "idle", function() { 
-        //     if (this.map.getZoom() > 16) this.map.setZoom(16); 
-        //     window.google.maps.event.removeListener(listener); 
+        // window.google.maps.event.addListener(this.map, "idle", function() { 
+        debugger
+        if (this.map.getZoom() > 8) {this.map.setZoom(8)}; 
+            // window.google.maps.event.removeListener(listener); 
         //   });
     }
 
     componentDidMount() {
         const mapOptions = {
-            center: { lat: 37.7758, lng: -122.435 }, // this is SF
-            zoom: 2,
+            // center: { lat: 37.7758, lng: -122.435 }, // this is SF
+            center: { lat: 0, lng: 0 }, // center of the map
+            // zoom: 2,
+            zoom: 5,
             streetViewControl: false,
             addressControl: false,
             panControl: false,
