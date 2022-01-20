@@ -2,7 +2,7 @@ import { connect } from "react-redux"
 import TripItem from "./trip_item"
 import { deleteTrip, updateTrip } from '../../../../actions/trip_actions'
 import { receiveTripId, resetTripId } from '../../../../actions/map_actions'
-import { fetchEntry, updateEntry } from '../../../../actions/entry_actions'
+import { fetchEntry, updateEntry } from '../../../../actions/entry_actions';
 
 
 const mSTP = (state, ownProps) => {

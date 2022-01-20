@@ -25,9 +25,9 @@ export default class TripItem extends Component {
     drop(e) {
         const { updateEntry, fetchEntry } = this.props;
         e.preventDefault();
+        e.stopPropagation();
         const data = e.dataTransfer.getData("text");
         const entry = this.props.entries[data]
-        debugger
         updateEntry(
             Object.assign(entry, { trip: this.props.trip._id})
         )

@@ -1,5 +1,7 @@
 import { connect } from "react-redux"
 import Sidebar from "./sidebar"
+import { updateEntry } from '../../../actions/entry_actions';
+
 
 const mSTP = state => {
     let selectedEntries = Object.values(state.entities.entries).filter(entry => (!entry.trip))
@@ -7,12 +9,13 @@ const mSTP = state => {
     combinedTripsEntries = Object.values(combinedTripsEntries)
     let sortedEntities = combinedTripsEntries.sort((a, b) => Date.parse(b.createdAt) - Date.parse(a.createdAt))
     return({
-        combinedTripsEntries: sortedEntities
+        combinedTripsEntries: sortedEntities,
+        entries: state.entities.entries
     })
 }
 
-// const mDTP = dispatch => ({
-//     fetchAllUserEntries: userId => dispatch(fetchAllUserEntries(userId))
-// })
+const mDTP = dispatch => ({
+    updateEntry: entry => dispatch(updateEntry(entry))
+})
 
-export default connect(mSTP, null)(Sidebar)
+export default connect(mSTP, mDTP)(Sidebar)

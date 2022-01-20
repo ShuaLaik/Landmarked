@@ -8,11 +8,30 @@ export default class Sidebar extends Component {
     constructor(props) {
         super(props);
         this.state = { display: 'entries'};
+        this.allowDrop = this.allowDrop.bind(this);
+        this.drop = this.drop.bind(this);
+    }
+
+    allowDrop(e) {
+        e.preventDefault();
+    }
+
+    drop(e) {
+        const { updateEntry, entries } = this.props;
+        e.preventDefault();
+        e.stopPropagation();
+        const data = e.dataTransfer.getData("text");
+        const entry = entries[data];
+        updateEntry(
+            Object.assign(entry, { trip: null})
+        )
     }
 
     render() {
         return (
-            <div className='sidebar-container'>
+            <div className='sidebar-container'
+            onDrop={this.drop} 
+            onDragOver={this.allowDrop}>
                 <div className='main-index-container'>
                     {this.props.combinedTripsEntries.map(entity => {
                         if (entity.type === 'trip'){
