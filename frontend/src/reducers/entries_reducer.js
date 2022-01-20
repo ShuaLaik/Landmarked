@@ -6,12 +6,10 @@ import { RECEIVE_ENTRIES,
 
     Object.freeze(prevState);
     let newState = Object.assign({}, prevState);
+    debugger
     switch(action.type) {
       case RECEIVE_ENTRIES:
-        debugger
-        if(action.entries.data) {
-          action.entries.data.forEach(entry => newState[entry._id] = entry) // data?
-        }
+        action.entries.data.forEach(entry => newState[entry._id] = entry) // data?
         return newState;
       case RECEIVE_ENTRY:
         newState[action.entry.data._id] = action.entry.data; // data?

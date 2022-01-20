@@ -10,10 +10,30 @@ export default class TripItem extends Component {
             disabled: true
         }
         debugger
-        this.handleClick = this.handleClick.bind(this)
-        this.handleDelete = this.handleDelete.bind(this)
-        this.submitNewTripTitle = this.submitNewTripTitle.bind(this)
-        this.handleTitleClick = this.handleTitleClick.bind(this)
+        this.handleClick = this.handleClick.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
+        this.submitNewTripTitle = this.submitNewTripTitle.bind(this);
+        this.handleTitleClick = this.handleTitleClick.bind(this);
+        this.drop = this.drop.bind(this);
+        this.allowDrop = this.allowDrop.bind(this);
+    }
+
+    allowDrop(e) {
+        e.preventDefault();
+    }
+
+    drop(e) {
+        const { updateEntry, fetchEntry } = this.props;
+        e.preventDefault();
+        const data = e.dataTransfer.getData("text");
+
+
+        fetchEntry(data)
+            .then(action => {
+                updateEntry(
+                    Object.assign(action.entry.data, { trip: data })
+                )
+            });
     }
     // ------------------------------------------------------------------------------
     handleClick () {
@@ -41,7 +61,6 @@ export default class TripItem extends Component {
     }
     
     submitNewTripTitle(e) {
-        debugger
         e.preventDefault();
         this.props.updateTrip(this.state.trip)
     }
@@ -55,7 +74,11 @@ export default class TripItem extends Component {
         let active = "hidden";
         this.props.currentTrip === this.props.trip._id ? active = "entities-container" : active = "hidden"
         return (
-            <div onClick={this.handleClick} className='trip-container'>
+            <div 
+            onClick={this.handleClick} 
+            className='trip-container'
+            onDrop={this.drop} 
+            onDragOver={this.allowDrop}>
                 <form onClick={this.handleTitleClick} onSubmit={this.submitNewTripTitle}>
                     <input  type="text" 
                             value={this.state.trip.title}

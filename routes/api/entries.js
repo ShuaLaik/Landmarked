@@ -21,6 +21,15 @@ router.get(`/user/:user_id`, (req, res) => { // given user ID in params, returns
     );
 });
 
+router.get(`/:entry_id`, (req, res) => { // given entry ID in params, returns that entry
+    Entry
+    .findOne({ _id: req.params._id }) 
+    .then(entry => res.json(entry))
+    .catch(err => res.status(404).json({ noentriesfound: 'no entries found for this id' }
+    )
+    );
+});
+
 router.get('/location/:location_id', (req, res) => { // given location ID in params, returns all location's entries
     Entry  
     .find({ location: req.params.location_id})

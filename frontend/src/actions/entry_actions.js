@@ -13,10 +13,12 @@ export const receiveEntries = entries => {
   }
 }
 
-const receiveEntry = entry => ({
-  type: RECEIVE_ENTRY,
-  entry
-});
+const receiveEntry = entry => {
+  debugger
+  return { type: RECEIVE_ENTRY,
+           entry
+  }
+};
 
 const removeEntry = entryId => ({
   type: REMOVE_ENTRY,
@@ -36,6 +38,16 @@ export const receiveEditEntryObject = (entry) => ({
 export const resetEntryObject = () => ({
   type: RESET_ENTRY_OBJ
 })
+
+export const fetchEntry = (entryId) => dispatch => {
+  debugger
+  return EntryAPIUtil.fetchEntry(entryId)
+   .then(entry => dispatch(receiveEntry(entry)), 
+    err => dispatch(receiveEntryErrors(err.responseJSON))
+)}
+  
+
+
 
 export const fetchAllUserEntries = (userId) => dispatch => (
     EntryAPIUtil.fetchAllUserEntries(userId)

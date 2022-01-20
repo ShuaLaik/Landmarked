@@ -1,9 +1,9 @@
 import axios from 'axios';
 
 // POTENTIAL - may need single entry
-// export const getEntry = (id) => { 
-//   return axios.get(`/api/entries/${id}`)
-// };
+export const fetchEntry = (entryId) => { 
+  return axios.get(`/api/entries/${entryId}`)
+};
 
 export const fetchAllUserEntries = userId => {
   return axios.get(`/api/entries/user/${userId}`)
