@@ -26,14 +26,11 @@ export default class TripItem extends Component {
         const { updateEntry, fetchEntry } = this.props;
         e.preventDefault();
         const data = e.dataTransfer.getData("text");
-
-
-        fetchEntry(data)
-            .then(action => {
-                updateEntry(
-                    Object.assign(action.entry.data, { trip: data })
-                )
-            });
+        const entry = this.props.entries[data]
+        debugger
+        updateEntry(
+            Object.assign(entry, { trip: this.props.trip._id})
+        )
     }
     // ------------------------------------------------------------------------------
     handleClick () {
