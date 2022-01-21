@@ -3,13 +3,9 @@ import React, { Component } from 'react'
 export default class Header extends Component {
     constructor(props) {
         super(props)
-        this.handleClick = this.handleClick.bind(this)
     }
 
-    handleClick () {
-        this.props.resetTripId()
-        this.props.resetEntryObject()
-    }
+
 
     render() {
         return (
@@ -24,7 +20,6 @@ export default class Header extends Component {
                         />
                     </form>
                     <h2>⚙️</h2>
-                    <button onClick={this.handleClick}/>
                     <button onClick={() => this.props.logout()}>Logout</button>
                 </div>
             </div>

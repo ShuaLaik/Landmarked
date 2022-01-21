@@ -8,4 +8,15 @@
 #body-container{
     display: flex;
     flex-direction: row;
+
+}
+
+#view-all-button {
+    position: absolute;
+    left: 2vw;
+    top: 7vh;
+    // bottom: 1vh;
+    z-index: 10;
+    height: 30px;
+    width: 5%;
 }

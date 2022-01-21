@@ -8,6 +8,12 @@ export default class Body extends Component {
         const {fetchAllUserEntries, fetchAllUserTrips, user} = this.props;
         fetchAllUserEntries(user.id);
         fetchAllUserTrips(user.id);
+        this.handleClick = this.handleClick.bind(this)
+    }
+
+    handleClick () {
+        this.props.resetTripId()
+        this.props.resetEntryObject()
     }
     
     render() {
@@ -16,6 +22,7 @@ export default class Body extends Component {
                 <div id="body-container">
                     {/* <MapDiv entries={this.props.entries}/> */}
                     {/* <MapContainer entries={this.props.entries}/> */}
+                    <button onClick={this.handleClick} id='view-all-button'>View All</button>
                     <MapContainer />
                     <SidebarContainer user={this.props.user}/>
                 </div>

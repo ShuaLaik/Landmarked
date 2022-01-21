@@ -14,7 +14,7 @@ export default class EntryItem extends Component {
             this.props.resetTripId()
         }
         this.props.receiveEditEntryObject(this.props.entry)
-        setTimeout(() => this.props.openModal("showEntry"), 1500);
+        
     }
 
     render() {
@@ -24,8 +24,9 @@ export default class EntryItem extends Component {
                 <img src={entry_photo_url} className="entry-image" alt="Entry"/>
                 <h1 className='entry-message'>{message}</h1>
                 <div>
+                    <button onClick={() => this.props.openModal("showEntry")}>View Entry</button>
                     <ModalButtonContainer entry={this.props.entry} action={"editEntry"} buttonTitle={"Edit"}/>
-                    <button onClick={() => this.props.deleteEntry(this.props.entry._id)}>Remove Entry</button>
+                    <button onClick={() => this.props.deleteEntry(this.props.entry._id)}>Remove</button>
                 </div>
             </div>
         )

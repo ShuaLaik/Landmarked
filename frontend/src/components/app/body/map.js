@@ -7,20 +7,16 @@ export default class MapDiv extends Component {
     componentDidUpdate(prevProps){
         if (Object.values(this.props.tripEntries).length > 0){ //selected trips
             this.MarkerManager.updateMarkers(Object.values(this.props.tripEntries), true)
-            // check for if selected trip entry
             this.changeZoom(Object.values(this.props.tripEntries))
-        } else { //all entries
+        } else { 
             this.MarkerManager.updateMarkers(Object.values(this.props.entries), false)
             this.changeZoom(Object.values(this.props.entries))
-            // this.map.setZoom(24);
-            // changeZoom(this.props.tripEntries)
         }
     }
       
 
     getCorners (entrys) {
         let coordinates = []; // smallest x smallest y 
-
         let latitudes = [];
         let longitudes = [];
 
