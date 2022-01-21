@@ -30,6 +30,7 @@ componentDidUpdate(prevProps){
     }
 }
  ```
+Taking advantage of the Redux state, we were able to conditionally render map markers and alter map zoom based on the user's current selection. When a 'trip' or 'entry' is selected, the Redux state is updated and the map dynamically changes. Updating the zoom and visible markes appropriately, the map is responsive to user input. 
 
 ## Technologies, Libraries, and APIs
 - MERN stack for creating the app
