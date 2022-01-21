@@ -15,4 +15,8 @@ const mSTP = state => {
 //     fetchAllUserEntries: userId => dispatch(fetchAllUserEntries(userId))
 // })
 
-export default connect(mSTP, null)(Sidebar)
+export default connect(mSTP, null)(Sidebar);
+
+
+
+   
