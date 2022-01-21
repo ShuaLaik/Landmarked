@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import parseDate from '../../../../util/parse_date';
 
 export default class EntryEditForm extends Component {
         constructor(props) {
@@ -21,21 +22,19 @@ export default class EntryEditForm extends Component {
 
     render() {
         return (
-            <div className='form-modal-container'>
-                <form onSubmit={this.handleSubmit}>
-                    <label> Entry Title
-                        <input  type="text" 
+                <form onSubmit={this.handleSubmit} className="show-container">
+                    <ul>
+                        <input  type="text" className="h1"
                                 onChange={this.update('title')}
                                 value={this.state.title}/> 
-                    </label>
-                    <label> Entry Message
-                        <input  type="text" 
+                                <h2>{parseDate(this.state.createdAt)}</h2>
+                        <textarea  type="text" 
                                 onChange={this.update('message')}
                                 value={this.state.message}/> 
-                    </label>
                     <button>Submit</button>
+                    </ul>
+                    <div><img src={this.state.entry_photo_url}/></div>
                 </form>
-            </div>
         )
     }
 }

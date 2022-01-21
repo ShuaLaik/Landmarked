@@ -21,7 +21,7 @@
         background-color: #9cb459;
         color: #2B3032;
         border-radius: 3px;
-        border: 2px solid rgb(122, 141, 70);
+        border: 1px solid rgb(122, 141, 70);
         font-size: 15px;
         text-justify: inter-cluster;
         text-align: center;
@@ -88,10 +88,14 @@
         transition-duration: .5s;
         width: 75%;
         width: inherit;
+        cursor: pointer;
     }
     button{
         display: flex;
         transition-duration: .5s;
+    }
+    button:hover{
+        border: 2px solid rgb(122, 141, 70);
     }
     #trip-buttons{
         display: flex;

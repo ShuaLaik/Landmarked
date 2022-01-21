@@ -57,18 +57,23 @@
             text-overflow: ellipsis;
         }
         button {
+            transition-duration: .3s;
             display: none;
             width: 75%;
             height: 43%;
             margin: 10px;
-            background-color: #9cb459;
+            background-color: rgb(232, 198, 119);
             color: #2B3032;
             border-radius: 3px;
-            border: 2px solid rgb(122, 141, 70);
+            border: 2px solid rgb(184, 156, 92);
             font-size: 15px;
             text-justify: inter-cluster;
             text-align: center;
             // text-indent: center;
+        }
+        button:hover{
+            transition-duration: .3s;
+            border: 1px solid rgb(184, 156, 92);
         }
         .div{
             transition-duration: .2s;

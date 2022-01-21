@@ -10,7 +10,7 @@ export default class Header extends Component {
     render() {
         return (
             <div className="Header">
-                <h1>Landmarked</h1>
+                <h1><span>L</span>and<span>M</span>arked</h1>
                 <h1>{this.props.user.username}</h1>
                 <div className="group">
                     <form>
