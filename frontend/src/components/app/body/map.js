@@ -36,7 +36,11 @@ export default class MapDiv extends Component {
         ); 
         // google.maps.event.addListenerOnce(map, 'bounds_changed', () => {
         
+        // let midpoint = {lat: (coordinates[0] + coordinates[2])/2, lng: (coordinates[0] + coordinates[2])/2}
+        // this.map.panTo(midpoint)
         this.map.fitBounds(bounds)
+        // this.map.panToBounds(bounds)
+        
         if (this.map.getZoom() > 8 && entrys.length < 2) {this.map.setZoom(8)};
         // var listener = window.google.maps.event.addListener(this.map, "idle", function() { 
         //     if (this.map.getZoom() > 16) this.map.setZoom(16); 
@@ -49,7 +53,7 @@ export default class MapDiv extends Component {
             // center: { lat: 37.7758, lng: -122.435 }, // this is SF
             center: { lat: 0, lng: 0 }, // center of the map
             // zoom: 2,
-            zoom: 5,
+            zoom: 3,
             streetViewControl: false,
             addressControl: false,
             panControl: false,
