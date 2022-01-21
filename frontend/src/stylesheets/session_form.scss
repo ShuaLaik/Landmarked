@@ -59,7 +59,7 @@
     }
     form{
         display: flex;
-        justify-content: center;
+        justify-content:space-evenly;
         align-items:center;
         flex-direction: column;
         button{
@@ -110,6 +110,6 @@
     input{
         margin-top: 10px;
         position: relative;
-        top: 30px;
+        top: 10px;
     }
 }

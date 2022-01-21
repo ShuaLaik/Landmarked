@@ -55,6 +55,7 @@ class SignupForm extends React.Component {
   }
 
   render() {
+    const demoUser = {username: 'shualaik', password: 'password'}
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -87,6 +88,8 @@ class SignupForm extends React.Component {
             {this.renderErrors()}
             </div>
             <button>Submit</button>
+            <br />
+         <button onClick={() => this.props.login(demoUser)}>Demo User</button>
         </form>
         </div>
     );
