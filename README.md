@@ -7,6 +7,7 @@ An online travel journal to track all the great places you visit and all the tri
 Completed with a group of 4 members having just been exposed to MongoDB, Landmarked was built using a MERN stack in just under 5 days. 
 
 ## Photos 
+![image](https://user-images.githubusercontent.com/63963324/150466852-db3e9a00-cd97-43dc-89a8-fb1fe893da88.png)
 ![image](https://user-images.githubusercontent.com/63963324/150466452-18666943-ce4a-47b0-9ea4-ed9ca08a222b.png)
 ![image](https://user-images.githubusercontent.com/63963324/150466625-1ddf116c-993e-42f2-b485-1985a81a04fc.png)
 
