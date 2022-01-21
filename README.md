@@ -6,6 +6,8 @@ An online travel journal to track all the great places you visit and all the tri
 
 Completed with a group of 4 members having just been exposed to MongoDB, Landmarked was built using a MERN stack in just under 5 days. 
 
+## Photos 
+
 ## Functionality 
  
 - Entries - When a user visits a location they are able to create an entry with a message and photo 
@@ -15,6 +17,17 @@ showing off their experience at the location.
   - Entries are saved to a location on the map when they are created. By default the user profile page displays a merker for each entry on the map.
   - When a trip is selected the travel path is plotted on the map
 
+## Code Snippets 
+
+```componentDidUpdate(prevProps){
+        if (Object.values(this.props.tripEntries).length > 0){ //selected trips
+            this.MarkerManager.updateMarkers(Object.values(this.props.tripEntries), true)
+            this.changeZoom(Object.values(this.props.tripEntries))
+        } else { 
+            this.MarkerManager.updateMarkers(Object.values(this.props.entries), false)
+            this.changeZoom(Object.values(this.props.entries))
+        }
+    }
 
 ## Technologies, Libraries, and APIs
 - MERN stack for creating the app
