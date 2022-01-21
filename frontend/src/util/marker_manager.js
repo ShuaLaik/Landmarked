@@ -64,7 +64,7 @@ constructor(map){
         this.markers[marker.entryId] = marker;
 
         const infowindow = new window.google.maps.InfoWindow({
-          content: `<b><h1>${entry.title.toUpperCase()}</h1></b><p>Message: ${entry.message}</p></b><img src=${entry.entry_photo_url} width="500px" height="600px"/>`
+          content: `<b><h1>${entry.title.toUpperCase()}</h1></b><p>Message: ${entry.message}</p></b><img src=${entry.entry_photo_url} width="100%" height="100%"/>`
         });
 
         marker.addListener("click", () => {

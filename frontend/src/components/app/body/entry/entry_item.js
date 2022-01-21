@@ -20,7 +20,7 @@ export default class EntryItem extends Component {
     render() {
         const {entry_photo_url, title} = this.props.entry
         return (
-            <div className='trip-entry-item-container' onClick={this.handleClick}>
+            <div  className='trip-entry-item-container' onClick={this.handleClick}>
                 <img src={entry_photo_url} className="entry-image" alt="Entry"/>
                 <h1 className='entry-message'>{title}</h1>
                 <div>
