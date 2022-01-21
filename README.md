@@ -27,7 +27,8 @@ showing off their experience at the location.
             this.MarkerManager.updateMarkers(Object.values(this.props.entries), false)
             this.changeZoom(Object.values(this.props.entries))
         }
-    }```
+    }
+ ```
 
 ## Technologies, Libraries, and APIs
 - MERN stack for creating the app
