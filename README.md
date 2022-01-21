@@ -38,7 +38,7 @@ Taking advantage of the Redux state, we were able to conditionally render map ma
 - AWS - Users can upload photos for their entries which are stored using AWS
 
 ## The Team
-- Joe Manso - Backend, state setup, the *bug exterminator*
+- Joe Manso - Backend, state setup, the *Bug Exterminator*
 - Yisrael (Izzy) Peikes - Backend and state setup, officially dubbed *State and Schema Sensai*
 - Josh Laikowski - Frontend and styling, known as the *Heroku Whisperer*
 - Mack Zumarraga - Frontend and Google Map API, goes by *Map Magician*
