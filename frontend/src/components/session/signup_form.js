@@ -18,7 +18,7 @@ class SignupForm extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.signedIn === true) {
-      this.props.history.push('/login');
+      this.props.history.push('/');
     }
 
     this.setState({errors: nextProps.errors})
@@ -44,10 +44,10 @@ class SignupForm extends React.Component {
 
   renderErrors() {
     return(
-      <ul>
+      <ul className="error-listener">
         {Object.keys(this.state.errors).map((error, i) => (
           <li key={`error-${i}`}>
-            {this.state.errors[error]}
+            <p>{this.state.errors[error]}</p>
           </li>
         ))}
       </ul>
@@ -56,6 +56,7 @@ class SignupForm extends React.Component {
 
   render() {
     return (
+      <div>
         <form onSubmit={this.handleSubmit}>
           <div className="inputs">
             <br/>
@@ -87,6 +88,7 @@ class SignupForm extends React.Component {
             </div>
             <button>Submit</button>
         </form>
+        </div>
     );
   }
 }

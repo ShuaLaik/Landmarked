@@ -20,8 +20,9 @@
         align-content: center;
         transition-duration: 1s;
         h1 {
+            padding-left: 10px;
             transition-duration: .5s;
-            padding: 10px;
+            padding-top: 10px;
             font-size: 25px;
             width: 30%;
             font-weight: 200;
@@ -32,15 +33,15 @@
             display: none;
             width: 75%;
             height: 43%;
-            margin: 2%;
+            margin: 15px;
             background-color: #9cb459;
             color: white;
             border-radius: 3px;
             border: 1px solid white;
-            font-size: 15px;
+            font-size: 10px;
             text-justify: inter-cluster;
             text-align: center;
-            text-indent: center;
+            // text-indent: center;
         }
         .div{
             transition-duration: .2s;

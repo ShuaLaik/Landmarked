@@ -47,7 +47,7 @@ class LoginForm extends React.Component {
   // Render the session errors if there are any
   renderErrors() {
     return(
-      <ul>
+      <ul className="error-listener">
         {Object.keys(this.state.errors).map((error, i) => (
           <li key={`error-${i}`}>
             {this.state.errors[error]}
@@ -59,7 +59,8 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-        <form onSubmit={this.handleSubmit}>
+      <div >
+        <form onSubmit={this.handleSubmit} className="log-in">
           <div className="inputs">
               <input type="text"
                 value={this.state.username}
@@ -77,6 +78,7 @@ class LoginForm extends React.Component {
            <button>Submit</button>
             {this.renderErrors()}
         </form>
+        </div>
     );
   }
 }

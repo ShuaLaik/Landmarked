@@ -51,20 +51,17 @@
         text-indent: 10px;
     }
     .inputs{
+        position: relative;
         height: 200px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        
-
-        
     }
     form{
         display: flex;
         justify-content: center;
-        align-items:stretch;
+        align-items:center;
         flex-direction: column;
-        
         button{
             width: 232px;
             height: 38px;
@@ -87,5 +84,32 @@
     }
     button:hover{
         background-color: rgb(113, 131, 64);
+    }
+}
+.error-listener{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: -38%;
+    right: 70%;
+    width: 600px;
+
+    li{
+        background-color: rgb(199, 80, 80);
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        margin: 5px;
+        p{
+            color: #2B3032;
+            padding: 10px;
+        }
+    }
+}
+.log-in{
+    input{
+        margin-top: 10px;
+        position: relative;
+        top: 30px;
     }
 }
