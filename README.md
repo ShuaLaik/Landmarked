@@ -21,7 +21,7 @@ showing off their experience at the location.
 
 ```
 componentDidUpdate(prevProps){
-    if (Object.values(this.props.tripEntries).length > 0){ //selected trips
+    if (Object.values(this.props.tripEntries).length > 0){ 
         this.MarkerManager.updateMarkers(Object.values(this.props.tripEntries), true)
         this.changeZoom(Object.values(this.props.tripEntries))
     } else { 
@@ -32,6 +32,21 @@ componentDidUpdate(prevProps){
  ```
 Taking advantage of the Redux state, we were able to conditionally render map markers and alter map zoom based on the user's current selection. When a 'trip' or 'entry' is selected, the Redux state is updated and the map dynamically changes. Updating the zoom and visible markes appropriately, the map is responsive to user input. 
 
+``` 
+getCorners (entrys) {
+    let coordinates = [];
+    let latitudes = [];
+    let longitudes = [];
+
+    for (let i = 0; i < entrys.length; i++){
+        latitudes.push(parseFloat(entrys[i].location.latitude))
+        longitudes.push(parseFloat(entrys[i].location.longitude))
+    }
+    coordinates = [Math.min(...latitudes), Math.min(...longitudes), Math.max(...latitudes), Math.max(...longitudes)]        
+    return coordinates;
+}  
+```
+getCorners is a function handling the minimum and maximum latitude/longitude values of each collection of entry to allow the Google Maps API to re-zoom the map view dynamically.
 ## Technologies, Libraries, and APIs
 - MERN stack for creating the app
 - Google maps API - Location based functionality, and dynamic map
