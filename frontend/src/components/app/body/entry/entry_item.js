@@ -18,13 +18,13 @@ export default class EntryItem extends Component {
     }
 
     render() {
-        const {entry_photo_url, message} = this.props.entry
+        const {entry_photo_url, title} = this.props.entry
         return (
             <div className='trip-entry-item-container' onClick={this.handleClick}>
                 <img src={entry_photo_url} className="entry-image" alt="Entry"/>
-                <h1 className='entry-message'>{message}</h1>
+                <h1 className='entry-message'>{title}</h1>
                 <div>
-                    <button onClick={() => this.props.openModal("showEntry")}>View Entry</button>
+                    <button onClick={() => this.props.openModal("showEntry")}>View</button>
                     <ModalButtonContainer entry={this.props.entry} action={"editEntry"} buttonTitle={"Edit"}/>
                     <button onClick={() => this.props.deleteEntry(this.props.entry._id)}>Remove</button>
                 </div>
