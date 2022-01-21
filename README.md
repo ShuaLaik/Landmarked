@@ -19,15 +19,16 @@ showing off their experience at the location.
 
 ## Code Snippets 
 
-```componentDidUpdate(prevProps){
-        if (Object.values(this.props.tripEntries).length > 0){ //selected trips
-            this.MarkerManager.updateMarkers(Object.values(this.props.tripEntries), true)
-            this.changeZoom(Object.values(this.props.tripEntries))
-        } else { 
-            this.MarkerManager.updateMarkers(Object.values(this.props.entries), false)
-            this.changeZoom(Object.values(this.props.entries))
-        }
+```
+componentDidUpdate(prevProps){
+    if (Object.values(this.props.tripEntries).length > 0){ //selected trips
+        this.MarkerManager.updateMarkers(Object.values(this.props.tripEntries), true)
+        this.changeZoom(Object.values(this.props.tripEntries))
+    } else { 
+        this.MarkerManager.updateMarkers(Object.values(this.props.entries), false)
+        this.changeZoom(Object.values(this.props.entries))
     }
+}
  ```
 
 ## Technologies, Libraries, and APIs
