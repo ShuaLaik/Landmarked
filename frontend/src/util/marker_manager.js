@@ -34,13 +34,19 @@ constructor(map){
     createMarkerFromListing(entry, idx) {
 
         var mIcon = {
-          // path: window.google.maps.SymbolPath.CIRCLE,
-          fillOpacity: 0.1,
-          fillColor: '#FF0000',
+          path: window.google.maps.SymbolPath.CIRCLE,
+          fillOpacity: 1,
+          // fillColor: '#FF0000',
+          // fillColor: '#2B3032',
+          fillColor: '#2B3032',
           strokeOpacity: 1,
-          strokeWeight: 1,
-          strokeColor: '#333',
-          scale: 12
+          strokeWeight: 0.5,
+          // strokeColor: '#333',
+          strokeColor: '#FFFFFF',
+          // strokeColor: '#DDDEDE',
+          scale: 12,
+          // url: "http://www.googlemapsmarkers.com/v1/009900/"
+          // url: "http://www.google.com/mapfiles/ms/micons"
         };
 
         const position = new window.google.maps.LatLng(parseFloat(entry.location.latitude), parseFloat(entry.location.longitude));
@@ -49,12 +55,26 @@ constructor(map){
             position,
             map: this.map,
             entryId: entry._id,
-            title: (idx + 1).toString(),
+            // title: (idx + 1).toString(),
+            title: entry.title,
             icon: mIcon,
             label: {color: '#FFFFFF', fontSize: '12px', fontWeight: '600', text: (idx + 1).toString()}
             // tripId: entry.trip
         });
         this.markers[marker.entryId] = marker;
+
+        const infowindow = new window.google.maps.InfoWindow({
+          content: `<b><h1>${entry.title.toUpperCase()}</h1></b><p>Message: ${entry.message}</p></b><img src=${entry.entry_photo_url} width="500px" height="600px"/>`
+        });
+
+        marker.addListener("click", () => {
+          infowindow.open({
+            anchor: marker,
+            map: this.map,
+            shouldFocus: false,
+          });
+        });
+
         // this.markers.push[marker]
     }
 
@@ -78,7 +98,10 @@ constructor(map){
         var line = new window.google.maps.Polyline({
           path: this.coords,
           geodesic: true,
-          strokeColor: '#FF0000',
+          // strokeColor: '#FF0000',
+          strokeColor: '#2B3032',
+          // strokeColor: '#A4BE5B',
+          strokeWeight: 0.5,
         //   strokeOpacity: 1.0,
           strokeOpacity: 0,  
         //   strokeWeight: 2
