@@ -4,7 +4,7 @@ import axios from 'axios';
 export default class EntryForm extends Component {
         constructor(props) {
         super(props);
-        this.state = Object.assign({}, this.props.entry, { photoFile: "" })
+        this.state = Object.assign({}, this.props.entry, { photoFile: "", photoUrl: "https://media.wired.com/photos/59269cd37034dc5f91bec0f1/master/pass/GoogleMapTA.jpg" })
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleFile = this.handleFile.bind(this)
         this.handleFormData = this.handleFormData.bind(this)
@@ -92,8 +92,12 @@ export default class EntryForm extends Component {
                             placeholder="Message" />
                         <input type="file" name="photo" onChange={this.handleFile}/> 
                         <button>Submit</button>
+                        <br/>
+                        <br />
+                        <h3>Hit enter when you're ready to submit!</h3>
                         </ul>
                         <div>
+                        {/* <img src={this.state.photoUrl}/> */}
                         {this.state.photoFile === "" ? null : <img src={this.state.photoUrl} />}
                         </div>
                 </form>
