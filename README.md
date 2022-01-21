@@ -60,7 +60,7 @@ getCorners is a function handling the minimum and maximum latitude/longitude val
 ## The Team
 - Joe Manso - Backend, state setup, the *Brutal Bug Basher*
 - Yisrael (Izzy) Peikes - Backend and state setup, officially dubbed *State and Schema Sensai*
-- Josh Laikowski - Frontend and styling, known as the *Heroku Whisperer* and *Betty*
+- Josh Laikowski - Frontend and *Styling Savant*, known as the *Heroku Whisperer* and *Betty*
 - Mack Zumarraga - Frontend and Google Map API, goes by *Map Magician*
 
 ## Features to come
