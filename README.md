@@ -1,5 +1,4 @@
 # Landmarked
-[Link to Landmarked]()
 
 An online travel journal to track all the great places you visit and all the trips you go on. 
 
