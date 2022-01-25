@@ -6,7 +6,12 @@ An online travel journal to track all the great places you visit and all the tri
 
 Completed with a group of 4 members having just been exposed to MongoDB, Landmarked was built using a MERN stack in just under 5 days. 
 
+
 ## Photos 
+![image](https://user-images.githubusercontent.com/63963324/150466955-c92744a9-ee2a-4f79-93ca-5066bd141ad3.png)
+![image](https://user-images.githubusercontent.com/63963324/150466452-18666943-ce4a-47b0-9ea4-ed9ca08a222b.png)
+![image](https://user-images.githubusercontent.com/63963324/150466625-1ddf116c-993e-42f2-b485-1985a81a04fc.png)
+
 
 ## Functionality 
  
@@ -55,7 +60,7 @@ getCorners is a function handling the minimum and maximum latitude/longitude val
 ## The Team
 - Joe Manso - Backend, state setup, the *Brutal Bug Basher*
 - Yisrael (Izzy) Peikes - Backend and state setup, officially dubbed *State and Schema Sensai*
-- Josh Laikowski - Frontend and styling, known as the *Heroku Whisperer* and *Betty*
+- Josh Laikowski - Frontend and *Styling Savant*, known as the *Heroku Whisperer* and *Betty*
 - Mack Zumarraga - Frontend and Google Map API, goes by *Map Magician*
 
 ## Features to come
