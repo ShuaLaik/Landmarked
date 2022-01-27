@@ -19,7 +19,7 @@
 }
 .sidebar-container:hover + .sidebar-button-container{
     button{
-        width: 22vw;
+        // width: 22vw;
     }
 }
 .sidebar-button-container {
@@ -89,7 +89,7 @@
 
     }
     .single-entry-item-container:hover{
-        transition-duration: .5s;
+        // transition-duration: .5s;
         cursor: pointer;
         height: 80px;
         // width: 100%;

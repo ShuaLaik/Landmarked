@@ -19,12 +19,7 @@ export default class Header extends Component {
                     <img src="https://media-exp1.licdn.com/dms/image/C4E03AQFAfJe2G9jawg/profile-displayphoto-shrink_800_800/0/1641660318264?e=1648080000&v=beta&t=Lx4cOB6TJ1xEHbRuGsQQLseJCR8vlTZZHCibZmxquC8"/>
                 </div>
                 <div className="group">
-                    <form>
-                        <input 
-                        type="text"
-                        placeholder="Search - broken :("
-                        />
-                    </form>
+                    <h2>{this.props.user.username}</h2>
                     <h2>⚙️</h2>
                     <button onClick={() => this.props.logout()}>Logout</button>
                 </div>
