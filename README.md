@@ -1,11 +1,16 @@
 # Landmarked
 
 An online travel journal to track all the great places you visit and all the trips you go on. 
+![image]()
 
-## Background
-
-Completed with a group of 4 members having just been exposed to MongoDB, Landmarked was built using a MERN stack in just under 5 days. 
-
+## Technologies, Libraries, and APIs
+- Express and Node.js on the backend
+- MongoDB 
+- Mongoose ORM for MongoDB
+- React.js frontend framework
+- Redux for state management
+- Google maps API - Location based functionality, and dynamic map
+- AWS - Users can upload photos for their entries which are stored using AWS
 
 ## Photos 
 ![image](https://user-images.githubusercontent.com/63963324/150466955-c92744a9-ee2a-4f79-93ca-5066bd141ad3.png)
@@ -52,12 +57,12 @@ getCorners (entrys) {
 }  
 ```
 getCorners is a function handling the minimum and maximum latitude/longitude values of each collection of entry to allow the Google Maps API to re-zoom the map view dynamically.
-## Technologies, Libraries, and APIs
-- MERN stack for creating the app
-- Google maps API - Location based functionality, and dynamic map
-- AWS - Users can upload photos for their entries which are stored using AWS
+
+
 
 ## The Team
+
+Completed with a group of 4 members having just been exposed to the MERN stack, Landmarked was built in just under 5 days! 
 - Joe Manso - Backend, state setup, the *Brutal Bug Basher*
 - Yisrael (Izzy) Peikes - Backend and state setup, officially dubbed *State and Schema Sensai*
 - Josh Laikowski - Frontend and *Styling Savant*, known as the *Heroku Whisperer* and *Betty*
