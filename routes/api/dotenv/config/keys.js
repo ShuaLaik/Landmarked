@@ -1,5 +1,5 @@
 module.exports = {
-    AWS_ACCESS_KEY_ID: "AKIAWPPWTP6HBYQAUFOA",
-    AWS_ACCESS_KEY_SECRET: "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",
-    AWS_BUCKET_NAME: "mern-landmarked-dev"
+    AWS_ACCESS_KEY_ID: "AKIAWQBTVTNQUPVCIW4Y",
+    AWS_ACCESS_KEY_SECRET: "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",
+    AWS_BUCKET_NAME: "mern-landmarked-dev1"
 }
