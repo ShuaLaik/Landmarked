@@ -1,3 +1,6 @@
 node_modules/
-
+config/keys.js
+keys.js
+keys_dev.js
+keys_pro.js
 
