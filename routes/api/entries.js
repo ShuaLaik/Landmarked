@@ -88,7 +88,6 @@ const s3 = new Aws.S3({
 
 router.post(`/`, upload.single('entry[photo]'), (req, res) => { // given data object, creates new entry
     // const { errors, isValid } = validateEntryInput(req.body);
-    
     // if (!isValid) {
     //     return res.status(400).json(errors);
     // }

@@ -28,7 +28,14 @@ export default class Body extends Component {
                 </div>
             )
         } else {
-            return null;
+            return (
+                <div id="body-container">
+                    {/* <MapDiv entries={this.props.entries}/> */}
+                    {/* <MapContainer entries={this.props.entries}/> */}
+                    <button onClick={this.handleClick} id='view-all-button'>View All</button>
+                    <SidebarContainer user={this.props.user}/>
+                </div>
+            )
         }
     }
 }
