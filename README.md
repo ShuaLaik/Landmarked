@@ -1,7 +1,7 @@
 # Landmarked
 
 An online travel journal to track all the great places you visit and all the trips you go on. 
-![image]()
+![image](https://user-images.githubusercontent.com/63963324/152225503-d916dfd5-5b9d-4eef-ade1-2525d4c35c22.png)
 [live link](http://landmarked.herokuapp.com/#/)
 ## Technologies, Libraries, and APIs
 - Express and Node.js on the backend
