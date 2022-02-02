@@ -2,7 +2,7 @@
 
 An online travel journal to track all the great places you visit and all the trips you go on. 
 ![image]()
-
+[live link](http://landmarked.herokuapp.com/#/)
 ## Technologies, Libraries, and APIs
 - Express and Node.js on the backend
 - MongoDB 
