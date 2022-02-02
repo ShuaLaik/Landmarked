@@ -31,8 +31,13 @@ export default class EntryForm extends Component {
         let formData = new FormData();
         formData.append("entry[message]", state.message)
         formData.append("entry[title]", state.title)
-        formData.append("entry[location][longitude]", state.location.longitude)
-        formData.append("entry[location][latitude]", state.location.latitude)
+        if (state.address){
+            formData.append("entry[location][longitude]", state.location.longitude)
+            formData.append("entry[location][latitude]", state.location.latitude)
+        } else {
+            formData.append("entry[location][longitude]", "")
+            formData.append("entry[location][latitude]", "")
+        }
         formData.append("entry[photo]", state.photoFile)
         formData.append("entry[user]", state.user)
         if (this.state.trip) {
@@ -46,6 +51,7 @@ export default class EntryForm extends Component {
         const address = this.state.address
         const addressString = address.split(" ").join("+")
         const requestUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${addressString}&key=${window.apikey}`
+        if (address){
         axios.get(requestUrl, {
             transformRequest: (data, headers) => {
                 delete headers.common['Authorization']
@@ -66,13 +72,22 @@ export default class EntryForm extends Component {
                 const newState = Object.assign({}, this.state, stateCopy)
                 delete newState.address
                 this.props.action(this.handleFormData(newState))
-            }).then(this.props.closeModal())
+            }).then(this.props.closeModal()).catch(() => e.stopPropagation)
+        } else {
+            this.props.action(this.handleFormData(this.state))
+        }
             let formatted_address, newLatitude, newLongitude
     }
 
     render() {
+
         return (
                 <form onSubmit={this.handleSubmit} className="show-container">
+                    <div className="ul">
+                        {this.props.errors.map(error => {
+                            return <h5>{error}</h5>
+                        })}
+                    </div>
                     <ul>
                         <input  
                             type="text"
@@ -94,10 +109,8 @@ export default class EntryForm extends Component {
                         <button>Submit</button>
                         <br/>
                         <br />
-                        <h3>Hit enter when you're ready to submit!</h3>
                         </ul>
                         <div>
-                        {/* <img src={this.state.photoUrl}/> */}
                         {this.state.photoFile === "" ? null : <img src={this.state.photoUrl} />}
                         </div>
                 </form>

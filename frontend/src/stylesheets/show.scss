@@ -23,6 +23,18 @@
         overflow: ellipsis;
         font-size: auto;
     }
+    .ul{
+        position: absolute;
+        top: 30px;
+        right: -90%;
+        background-color: rgb(199, 80, 80);
+        color: rgb(54, 54, 54);
+        h5{
+            padding: 1vh;
+            margin: 1vh;
+            width: 17vw;
+        }
+    }
     h2{
         padding-bottom: 10px;
         margin-left: 18px;
@@ -41,22 +53,29 @@
         border-left: none;
     }
     button{
-        display: none;
-        width: 38%;
-        height: 43%;
-        margin: 2%;
-        background-color: #9cb459;
-        color: #2B3032;
-        border-radius: 3px;
-        border: 1px solid rgb(122, 141, 70);
-        font-size: 15px;
-        text-justify: inter-cluster;
-        text-align: center;
-        text-indent: center;
-        margin-left: 10px;
+        // display: none;
+        // width: 38%;
+        // height: 43%;
+        // margin: 2%;
+        background-color: transparent;
+        border: none;
+        font-weight: 700;
+        padding: 10px;
+        border-radius: 8px;
+        position: absolute;
+        left: 10px;
+        bottom: 10px;
+        // color: #2B3032;
+        // border-radius: 3px;
+        // border: 1px solid rgb(122, 141, 70);
+        // font-size: 15px;
+        // text-justify: inter-cluster;
+        // text-align: center;
+        // text-indent: center;
+        // margin-left: 10px;
         }
     button:hover{
-        border: 2px solid rgb(122, 141, 70);
+        background-color: rgba(197, 180, 30, 0.397);
     }
     textarea{
         margin-top: 16px;

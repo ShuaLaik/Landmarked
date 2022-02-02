@@ -55,7 +55,7 @@ export const fetchAllLocationEntries = (locationId) => dispatch => (
 export const createEntry = (entry) => dispatch => (
     EntryAPIUtil.createEntry(entry)
         .then(entry => dispatch(receiveEntry(entry)), 
-        err => dispatch(receiveEntryErrors(err.responseJSON))
+        err => dispatch(receiveEntryErrors(err))
     )
 );
 

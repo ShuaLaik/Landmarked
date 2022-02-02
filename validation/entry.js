@@ -4,7 +4,15 @@ const validText = require('./valid-text');
 module.exports = function validateEntryInput(data) {
     let errors = {};
   
-    if (Validator.isEmpty(data.entry_photo_url)) {
+   
+   
+   
+   
+   
+   
+   
+   
+    if (Validator.isEmpty(data.photo)) {
       errors.entry_photo_url = 'A photo is required';
     }
   
@@ -13,19 +21,16 @@ module.exports = function validateEntryInput(data) {
     }
 
     if (Validator.isEmpty(data.title)) {
-      errors.message = 'title field is required';
+      errors.title = 'title field is required';
     }
 
-    if (Validator.isEmpty(data.location.longitude)) {
-        errors.location.longitude = 'A longitude is required';
-    }
+
+
+
+
 
     if (Validator.isEmpty(data.location.latitude)) {
-        errors.location.latitude = 'A latitude is required';
-    }
-    
-    if (Validator.isEmpty(data.user)) {
-      errors.user = 'user field is required';
+        errors.location = 'A location is required';
     }
     
     return {

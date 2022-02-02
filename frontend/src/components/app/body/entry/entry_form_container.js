@@ -15,7 +15,8 @@ const mSTP = (state, ownProps) => ({
             longitude: "",
             latitude: ""
         }
-    }
+    },
+    errors: Object.values(state.errors.entryErrors)
 }) 
 
 
