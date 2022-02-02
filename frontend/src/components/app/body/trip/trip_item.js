@@ -65,7 +65,7 @@ export default class TripItem extends Component {
                     {
                         this.props.tripEntries.map(tripEntry => {
                             return (
-                                <EntryItemContainer entry={tripEntry}/>
+                                <EntryItemContainer key={tripEntry._id} entry={tripEntry}/>
                             )})
                     }
                 </div>

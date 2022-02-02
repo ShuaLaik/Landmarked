@@ -85,11 +85,11 @@ class SignupForm extends React.Component {
                 placeholder="Confirm Password"
               />
             <br/>
-            {this.renderErrors()}
             </div>
             <button>Submit</button>
             <br />
-         <button onClick={() => this.props.login(demoUser)}>Demo User</button>
+         <button type="button" onClick={() => this.props.login(demoUser)}>Demo User</button>
+            {this.renderErrors()}
         </form>
         </div>
     );

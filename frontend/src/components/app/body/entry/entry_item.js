@@ -24,8 +24,7 @@ export default class EntryItem extends Component {
                 <img src={entry_photo_url} className="entry-image" alt="Entry"/>
                 <h1 className='entry-message'>{title}</h1>
                 <div>
-                    <button onClick={() => this.props.openModal("showEntry")}>View</button>
-                    <ModalButtonContainer entry={this.props.entry} action={"editEntry"} buttonTitle={"Edit"}/>
+                    <ModalButtonContainer entry={this.props.entry} action={"editEntry"} buttonTitle={"View"}/>
                     <button onClick={() => this.props.deleteEntry(this.props.entry._id)}>Remove</button>
                 </div>
             </div>

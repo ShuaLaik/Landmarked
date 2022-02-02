@@ -15,7 +15,7 @@ export default class EntryShow extends Component {
         return (
             <form className="show-container">
                 <ul>
-                    <input
+                    <input message
                     className="h1"
                     value={title}/>
                     <h2>{parseDate(createdAt)}</h2>

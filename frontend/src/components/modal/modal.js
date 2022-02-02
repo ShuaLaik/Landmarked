@@ -28,7 +28,7 @@ function Modal(props) {
       component = <TripEditFormContainer/>;
       break;
     case 'showEntry':
-      component = <EntryShowContainer />
+      component = <EditEntryFormContainer/>
       break;
     default:
       return null;

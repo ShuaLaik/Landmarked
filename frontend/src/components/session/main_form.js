@@ -9,6 +9,9 @@ export default class MainForm extends Component {
             formType: "signup"
         }
     }
+    componentWillUnmount(){
+        
+    }
 
     handleClick(field){
         return (e) => {

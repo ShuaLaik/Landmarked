@@ -17,7 +17,7 @@ export default class Body extends Component {
     }
     
     render() {
-        if (Object.values(this.props.entries).length > 0){
+        // if (Object.values(this.props.entries).length > 0){
             return (
                 <div id="body-container">
                     {/* <MapDiv entries={this.props.entries}/> */}
@@ -27,15 +27,15 @@ export default class Body extends Component {
                     <SidebarContainer user={this.props.user}/>
                 </div>
             )
-        } else {
-            return (
-                <div id="body-container">
-                    {/* <MapDiv entries={this.props.entries}/> */}
-                    {/* <MapContainer entries={this.props.entries}/> */}
-                    <button onClick={this.handleClick} id='view-all-button'>View All</button>
-                    <SidebarContainer user={this.props.user}/>
-                </div>
-            )
-        }
+        // } else {
+        //     return (
+        //         <div id="body-container">
+        //             {/* <MapDiv entries={this.props.entries}/> */}
+        //             {/* <MapContainer entries={this.props.entries}/> */}
+        //             <button onClick={this.handleClick} id='view-all-button'>View All</button>
+        //             <SidebarContainer user={this.props.user}/>
+        //         </div>
+        //     )
+        // }
     }
 }
