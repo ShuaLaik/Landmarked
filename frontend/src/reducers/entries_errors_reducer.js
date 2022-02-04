@@ -5,10 +5,9 @@ const _nullErrors = [];
 
 const entryErrorsReducer = (state = _nullErrors, action) => {
   Object.freeze(state);
-  debugger
   switch(action.type) {
     case RECEIVE_ENTRY_ERRORS:
-      return action.errors.response.data;
+      return Object.values(action.errors.response.data);
     default:
       return state;
   }

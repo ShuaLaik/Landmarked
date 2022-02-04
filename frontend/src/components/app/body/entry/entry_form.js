@@ -8,6 +8,8 @@ export default class EntryForm extends Component {
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleFile = this.handleFile.bind(this)
         this.handleFormData = this.handleFormData.bind(this)
+        this.handleErrors = this.handleErrors.bind(this)
+        this.renderErrors = this.renderErrors.bind(this)
     }
 
     handleFile(e){
@@ -28,16 +30,17 @@ export default class EntryForm extends Component {
     }
 
     handleFormData(state){
+        debugger;
         let formData = new FormData();
         formData.append("entry[message]", state.message)
         formData.append("entry[title]", state.title)
-        if (state.address){
+        // if (state.address){
             formData.append("entry[location][longitude]", state.location.longitude)
             formData.append("entry[location][latitude]", state.location.latitude)
-        } else {
-            formData.append("entry[location][longitude]", "")
-            formData.append("entry[location][latitude]", "")
-        }
+        // } else {
+        //     formData.append("entry[location][longitude]", "")
+        //     formData.append("entry[location][latitude]", "")
+        // }
         formData.append("entry[photo]", state.photoFile)
         formData.append("entry[user]", state.user)
         if (this.state.trip) {
@@ -48,10 +51,12 @@ export default class EntryForm extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        // this.setState({errors: []})
+        if (this.handleErrors()) return null;
+        debugger
         const address = this.state.address
         const addressString = address.split(" ").join("+")
         const requestUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${addressString}&key=${window.apikey}`
-        if (address){
         axios.get(requestUrl, {
             transformRequest: (data, headers) => {
                 delete headers.common['Authorization']
@@ -72,22 +77,51 @@ export default class EntryForm extends Component {
                 const newState = Object.assign({}, this.state, stateCopy)
                 delete newState.address
                 this.props.action(this.handleFormData(newState))
-            }).then(this.props.closeModal()).catch(() => e.stopPropagation)
-        } else {
-            this.props.action(this.handleFormData(this.state))
-        }
+       
+            }).then(this.props.closeModal())
             let formatted_address, newLatitude, newLongitude
     }
 
-    render() {
+    handleErrors(e){
+        let issue = false;
+        let err = []
+        if (this.state.photoFile === "") {
+            err = err.concat(["A Photo is Required"])
+            issue = true
+        }
+        if (this.state.address === ""){
+            err = err.concat(["A Address is Required"])
+            issue = true
+        }
+        if (this.state.title === ""){
+            err = err.concat(["A title is Required"])      
+            issue = true    
+        }
+        if (this.state.message === ""){
+            err = err.concat(["A message is Required"])
+            issue = true
+        }
+        debugger
+        this.setState({errors: err})
+        // if (err.length) {
+        //     return true;
+        // }
+        return issue;
+    }
 
+    renderErrors(){
+        if (!this.state.errors.length) return null
+        return <div className="ul">
+            {this.state.errors.map(error => {
+                return <h5>{error}</h5>
+            })}
+        </div>
+    }
+
+    render() {
+        debugger
         return (
                 <form onSubmit={this.handleSubmit} className="show-container">
-                    <div className="ul">
-                        {this.props.errors.map(error => {
-                            return <h5>{error}</h5>
-                        })}
-                    </div>
                     <ul>
                         <input  
                             type="text"
@@ -110,8 +144,11 @@ export default class EntryForm extends Component {
                         <br/>
                         <br />
                         </ul>
+                        <div className="second-page">
                         <div>
                         {this.state.photoFile === "" ? null : <img src={this.state.photoUrl} />}
+                        {this.renderErrors()}
+                        </div>
                         </div>
                 </form>
         )

@@ -24,15 +24,26 @@
         font-size: auto;
     }
     .ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         position: absolute;
-        top: 30px;
-        right: -90%;
-        background-color: rgb(199, 80, 80);
+        // top: 285px;
+        // left: 80px;
+        bottom: 10px;
+        width: 40%;
+        right: 10px;
+        // right: -90%;
+        border: 3px dashed rgb(199, 80, 80);
         color: rgb(54, 54, 54);
+        border-radius: 16px;
         h5{
-            padding: 1vh;
-            margin: 1vh;
-            width: 17vw;
+            padding: 0px 0px 0px 0px;
+            margin: 10px 0px 10px 0px;
+            font-weight: 700;
+            width: 70%;
+            color: rgb(199, 80, 80);
         }
     }
     h2{
@@ -101,6 +112,11 @@
             right: -5px
         }
     }   
+}
+.second-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 // .pop-up{
 //     // object-fit: contain;

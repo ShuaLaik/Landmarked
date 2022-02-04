@@ -4,17 +4,10 @@ const validText = require('./valid-text');
 module.exports = function validateEntryInput(data) {
     let errors = {};
   
-   
-   
-   
-   
-   
-   
-   
-   
-    if (Validator.isEmpty(data.photo)) {
-      errors.entry_photo_url = 'A photo is required';
-    }
+
+    // if (Validator.isEmpty(data.photo)) {
+    //   errors.entry_photo_url = 'A photo is required';
+    // }
   
     if (Validator.isEmpty(data.message)) {
       errors.message = 'Message field is required';
