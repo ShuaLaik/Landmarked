@@ -1,6 +1,7 @@
 node_modules/
-# config/keys.js
-# keys.js
-# keys_dev.js
-# keys_pro.js
+config/keys.js
+keys.js
+keys_dev.js
+keys_prod.js
+passport.js
 
