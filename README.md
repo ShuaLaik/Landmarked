@@ -1,5 +1,7 @@
 # Landmarked
 
+# WEBSITE NO LONGER HOSTED - sorry for the inconvenience :(
+
 An online travel journal to track all the great places you visit and all the trips you go on. 
 
 ![image](https://user-images.githubusercontent.com/63963324/152225503-d916dfd5-5b9d-4eef-ade1-2525d4c35c22.png)
